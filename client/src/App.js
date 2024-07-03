@@ -22,7 +22,7 @@ function App() {
        */
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#"> <img src="box-seam.svg" height="30"/> Fake Company Name</a>
+          <a className="navbar-brand mx-2" href="#"> <img src={`${process.env.PUBLIC_URL}/images/calendar-week.svg`} height="30"/> Fake Company Name</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -35,7 +35,7 @@ function App() {
                 <a className="nav-link" href="#">About</a>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Roles
                 </a>
                 <ul className="dropdown-menu">
@@ -47,8 +47,8 @@ function App() {
               </li>
             </ul>
             <form className="d-flex" role="search">
-              <input className="form-control me-2" type="search" placeholder="Postcode" aria-label="Search"/>
-              <button className="btn btn-outline-success" type="submit">Check</button>
+              <button className="btn btn-primary mx-2" type="submit">Sign In</button>
+              <button className="btn btn-outline-primary mx-2" type="submit">Sign Up</button>
             </form>
           </div>
         </div>
