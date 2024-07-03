@@ -21,7 +21,7 @@ function App() {
       </header>
     </div>
        */
-      <div className="container">
+      <div className="container-fluid">
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid">
             <a className="navbar-brand mx-2" href="#"> <img src={`${process.env.PUBLIC_URL}/images/calendar-week.svg`} height="30"/> Fake Company Name</a>
