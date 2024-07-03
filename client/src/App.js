@@ -66,7 +66,7 @@ function App() {
               <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3">The IT Help Desk Solution You Need</h1>
               <p className="lead">Forget about manually scheduling appointments for your users. Our system will automatically handle the scheduling and assigning of appointments to
                 your employees based on the needs of your users, as well as including a host of additional features including live chat, powerful administrative privileges, and an
-                easy to user dashboard for all of your employees.
+                easy to use dashboard for all of your employees.
                 </p>
                 <div className="d-grid gap-2 d-md-flex justify-content-md-start">
                 <button type="button" className="btn btn-primary btn-lg px-4 me-md-2">Sign In</button>
@@ -77,40 +77,28 @@ function App() {
         </div>
 
         <div className="container px-4 py-5" id="featured-3">
-          <h2 className="pb-2 border-bottom">Columns with icons</h2>
+          <h2 className="pb-2 border-bottom">Roles</h2>
           <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
             <div className="feature col">
               <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                <svg className="bi" width="1em" height="1em"><use xlinkHref="#collection"></use></svg>
+                <img src={`${process.env.PUBLIC_URL}/images/person-circle.svg`} className ="white-svg" height="30"/>
               </div>
-              <h3 className="fs-2 text-body-emphasis">Featured title</h3>
-              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-              <a href="#" className="icon-link">
-                Call to action
-                <svg className="bi"><use xlinkHref="#chevron-right"></use></svg>
-              </a>
+              <h3 className="fs-2 text-body-emphasis">User</h3>
+              <p>Create an account to schedule and view appointments, access a live chat, and receive email updates on your appointments if requested.</p>
             </div>
             <div className="feature col">
               <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                <svg className="bi" width="1em" height="1em"><use xlinkHref="#people-circle"></use></svg>
+                <img src={`${process.env.PUBLIC_URL}/images/person-gear.svg`} className ="white-svg" height="30"/>
               </div>
-              <h3 className="fs-2 text-body-emphasis">Featured title</h3>
-              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-              <a href="#" className="icon-link">
-                Call to action
-                <svg className="bi"><use xlinkHref="#chevron-right"></use></svg>
-              </a>
+              <h3 className="fs-2 text-body-emphasis">Technician</h3>
+              <p>View your scheduled appointments, chat and email with your customers, and send updates about your work to those who need to know.</p>
             </div>
             <div className="feature col">
               <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                <svg className="bi" width="1em" height="1em"><use xlinkHref="#toggles2"></use></svg>
+                <img src={`${process.env.PUBLIC_URL}/images/person-workspace.svg`} className ="white-svg" height="30"/>
               </div>
-              <h3 className="fs-2 text-body-emphasis">Featured title</h3>
-              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-              <a href="#" className="icon-link">
-                Call to action
-                <svg className="bi"><use xlinkHref="#chevron-right"></use></svg>
-              </a>
+              <h3 className="fs-2 text-body-emphasis">Administrator</h3>
+              <p>View the appointments of your technicians, allocate administrator privileges to others, and alter assigned schedules if necessary.</p>
             </div>
           </div>
         </div>
