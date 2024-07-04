@@ -36,7 +36,7 @@ export default function Homepage() {
                 </li>
               </ul>
               <form className="d-flex" role="search">
-                <button className="btn btn-primary mx-2" type="submit">Sign In</button>
+                <button className="btn btn-primary mx-2" type="submit" onClick={() => navigate("/signin")}>Sign In</button>
                 <button className="btn btn-outline-secondary" type="submit" onClick={() => navigate("/signup")}>Sign Up</button>
               </form>
             </div>
@@ -72,7 +72,8 @@ export default function Homepage() {
             <div className="d-grid gap-2 d-md-flex justify-content-md-start">
               <button
                 type="button"
-                className="btn btn-primary btn-lg px-4 me-md-2">
+                className="btn btn-primary btn-lg px-4 me-md-2"
+                onClick={() => navigate("/signin")}>
                 Sign In
               </button>
               <button
