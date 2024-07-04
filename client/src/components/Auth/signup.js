@@ -36,12 +36,17 @@ const SignupForm = () => {
     return errors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const errors = validate();
     if (Object.keys(errors).length === 0) {
-      signUp(formData);
-      navigate("/");
+      await signUp(formData)
+        .then(() => {
+          navigate("/");
+        })
+        .catch((error) => {
+          alert(error.response.data.message);
+        });
     } else {
       setFormErrors(errors);
     }
