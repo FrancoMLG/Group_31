@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import userRoutes from "./routes/users.js";
 import dotenv from "dotenv";
 
 const app = express();
@@ -11,6 +12,8 @@ app.use(express.urlencoded({limit: "30mb", extended: true}));
 
 app.use(cors());
 
+app.use("/users", userRoutes);
+
 app.get("/", (req, res) => {
   res.send("GET request to the homepage");
 });
@@ -18,7 +21,9 @@ app.get("/", (req, res) => {
 const PORT = 5000;
 
 mongoose
-  .connect(process.env.MONGODB_URI, {})
+  .connect(process.env.MONGODB_URI, {
+    dbName: "group31",
+  })
   .then(() =>
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
