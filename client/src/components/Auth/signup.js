@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./signup.css";
 import {signUp} from "../../api";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, Link} from "react-router-dom";
 
 const SignupForm = () => {
   const navigate = useNavigate();
@@ -53,6 +53,31 @@ const SignupForm = () => {
   };
 
   return (
+    <div className="container-fluid bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg fixed-top bg-body-secondary">
+        <div className="container-fluid">
+          <Link className="navbar-brand mx-2" to="/">
+            <img
+              src={`${process.env.PUBLIC_URL}/images/calendar-week.svg`}
+              height="30"
+              alt="Fake Company Logo"
+            />{" "}
+            Fake Company Name
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+	  
     <div className="signup-form">
       <h2>Sign Up</h2>
       <form onSubmit={handleSubmit}>
@@ -133,8 +158,10 @@ const SignupForm = () => {
         <button type="submit" className="btn btn-primary">
           Sign Up
         </button>
+		<p className="mt-5 mb-3 text-body-secondary">© 2017–2024</p>
       </form>
     </div>
+	</div>
   );
 };
 
