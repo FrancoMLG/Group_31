@@ -8,8 +8,8 @@ export default function Homepage() {
   const navigate = useNavigate();
 
   return (
-    <div className="container-fluid">
-      <nav className="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+    <div className="container-fluid bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg fixed-top bg-body-secondary">
           <div className="container-fluid">
             <a className="navbar-brand mx-2" href="#"> <img src={`${process.env.PUBLIC_URL}/images/calendar-week.svg`} height="30"/> Fake Company Name</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
