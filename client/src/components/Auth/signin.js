@@ -45,7 +45,7 @@ const SigninForm = () => {
                   width="72"
                   height="57"
                 />
-                <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
+                <h1 className="h3 mb-3 fw-normal">Sign In</h1>
 
                 <div className="form-floating">
                   <input
