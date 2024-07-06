@@ -29,8 +29,11 @@ const SignupForm = () => {
     if (!formData.firstName) errors.firstName = "First name is required.";
     if (!formData.lastName) errors.lastName = "Last name is required.";
     if (!formData.email) errors.email = "Email is required.";
+    if (!formData.email) errors.email = "Email is required.";
+    // does not actually check email, just format with chars @ chars . chars
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) errors.email = "Email must be valid.";
+    
     if (!formData.password) errors.password = "Password is required.";
-
     // checks for 8 chars, 1 num, 1 upper, 1 lower
     else if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(formData.password)) 
       errors.password = "Password must be at least 8 characters long and include at least one number, one uppercase letter, and one lowercase letter.";
