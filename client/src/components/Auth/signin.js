@@ -32,14 +32,14 @@ const SigninForm = () => {
     e.preventDefault();
     const errors = validate();
     if (Object.keys(errors).length === 0) {
-      await signIn(formData)
-        .then(() => {
-          navigate("/");
-        })
-        .catch((error) => {
-          console.log(error);
-          alert(error.response.data.message);
-        });
+      try {
+        const {data} = await signIn(formData);
+        localStorage.setItem("profile", JSON.stringify(data));
+        navigate("/");
+      } catch (error) {
+        console.log(error);
+        alert(error.response.data.message);
+      }
     }
   };
 
