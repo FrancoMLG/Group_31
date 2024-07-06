@@ -71,97 +71,98 @@ const SignupForm = () => {
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+            aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
         </div>
       </nav>
-	  
-    <div className="signup-form">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>First Name</label>
-          <input
-            type="text"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-            className={`form-control ${
-              formErrors.firstName ? "is-invalid" : ""
-            }`}
-          />
-          {formErrors.firstName && (
-            <div className="invalid-feedback">{formErrors.firstName}</div>
-          )}
-        </div>
-        <div className="form-group">
-          <label>Last Name</label>
-          <input
-            type="text"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            className={`form-control ${
-              formErrors.lastName ? "is-invalid" : ""
-            }`}
-          />
-          {formErrors.lastName && (
-            <div className="invalid-feedback">{formErrors.lastName}</div>
-          )}
-        </div>
 
-        <div className="form-group">
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className={`form-control ${formErrors.email ? "is-invalid" : ""}`}
-          />
-          {formErrors.email && (
-            <div className="invalid-feedback">{formErrors.email}</div>
-          )}
-        </div>
-        <div className="form-group">
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            className={`form-control ${
-              formErrors.password ? "is-invalid" : ""
-            }`}
-          />
-          {formErrors.password && (
-            <div className="invalid-feedback">{formErrors.password}</div>
-          )}
-        </div>
-        <div className="form-group">
-          <label>Confirm Password</label>
-          <input
-            type="password"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            className={`form-control ${
-              formErrors.confirmPassword ? "is-invalid" : ""
-            }`}
-          />
-          {formErrors.confirmPassword && (
-            <div className="invalid-feedback">{formErrors.confirmPassword}</div>
-          )}
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Sign Up
-        </button>
-		<p className="mt-5 mb-3 text-body-secondary">© 2017–2024</p>
-      </form>
+      <div className="signup-form">
+        <h2>Sign Up</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>First Name</label>
+            <input
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              className={`form-control ${
+                formErrors.firstName ? "is-invalid" : ""
+              }`}
+            />
+            {formErrors.firstName && (
+              <div className="invalid-feedback">{formErrors.firstName}</div>
+            )}
+          </div>
+          <div className="form-group">
+            <label>Last Name</label>
+            <input
+              type="text"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              className={`form-control ${
+                formErrors.lastName ? "is-invalid" : ""
+              }`}
+            />
+            {formErrors.lastName && (
+              <div className="invalid-feedback">{formErrors.lastName}</div>
+            )}
+          </div>
+
+          <div className="form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className={`form-control ${formErrors.email ? "is-invalid" : ""}`}
+            />
+            {formErrors.email && (
+              <div className="invalid-feedback">{formErrors.email}</div>
+            )}
+          </div>
+          <div className="form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              className={`form-control ${
+                formErrors.password ? "is-invalid" : ""
+              }`}
+            />
+            {formErrors.password && (
+              <div className="invalid-feedback">{formErrors.password}</div>
+            )}
+          </div>
+          <div className="form-group">
+            <label>Confirm Password</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              className={`form-control ${
+                formErrors.confirmPassword ? "is-invalid" : ""
+              }`}
+            />
+            {formErrors.confirmPassword && (
+              <div className="invalid-feedback">
+                {formErrors.confirmPassword}
+              </div>
+            )}
+          </div>
+          <button type="submit" className="btn btn-primary">
+            Sign Up
+          </button>
+          <p className="mt-5 mb-3 text-body-secondary">© 2017–2024</p>
+        </form>
+      </div>
     </div>
-	</div>
   );
 };
 
