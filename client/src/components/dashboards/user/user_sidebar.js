@@ -1,12 +1,15 @@
 import React, { useEffect } from "react";
 import "./user_sidebar.css";
+import {useNavigate} from "react-router-dom";
 
 export default function UserSideBar({ activeLinkId }) {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const activeLink = document.getElementById(activeLinkId);
     if (activeLink) {
       activeLink.classList.add("active");
-      activeLink.classList.toggle("link-body-emphasis");
+      activeLink.classList.remove("link-body-emphasis");
       activeLink.setAttribute("aria-current", "page");
     }
   }, [activeLinkId]);
@@ -25,7 +28,7 @@ export default function UserSideBar({ activeLinkId }) {
       <hr />
       <ul className="nav nav-pills flex-column mb-auto">
         <li className="nav-item">
-          <a href="#" id="home-link" className="nav-link link-body-emphasis">
+          <a href="#" id="home-link" className="nav-link link-body-emphasis" onClick={() => navigate("/userhome")}>
             <img
               className="padded-img"
               src={`${process.env.PUBLIC_URL}/images/house.svg`}
@@ -36,7 +39,7 @@ export default function UserSideBar({ activeLinkId }) {
           </a>
         </li>
         <li>
-          <a href="#" id="appointments-link" className="nav-link link-body-emphasis">
+          <a href="#" id="appointments-link" className="nav-link link-body-emphasis" onClick={() => navigate("/userappts")}>
             <img
               className="padded-img"
               src={`${process.env.PUBLIC_URL}/images/calendar-event.svg`}
@@ -47,7 +50,7 @@ export default function UserSideBar({ activeLinkId }) {
           </a>
         </li>
         <li>
-          <a href="#" id="schedule-link" className="nav-link link-body-emphasis">
+          <a href="#" id="schedule-link" className="nav-link link-body-emphasis" onClick={() => navigate("/userappts")}>
             <img
               className="padded-img"
               src={`${process.env.PUBLIC_URL}/images/calendar-plus.svg`}
