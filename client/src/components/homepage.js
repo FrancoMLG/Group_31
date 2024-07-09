@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../App.css";
+import Navbar from "./navbar";
 import {useNavigate} from "react-router-dom";
 
 export default function Homepage() {
@@ -10,6 +11,9 @@ export default function Homepage() {
 
   return (
     <div className="container-fluid bg-body-tertiary">
+
+      <Navbar />
+
       <div className="container col-xxl-8 px-2 py-5">
         <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
           <div className="col-10 col-sm-8 col-lg-6">
