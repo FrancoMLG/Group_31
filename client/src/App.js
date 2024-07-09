@@ -3,9 +3,9 @@ import Homepage from "./components/homepage";
 import SignupForm from "./components/Auth/signup";
 import SigninForm from "./components/Auth/signin";
 import Navbar from "./components/navbar";
-import UserDash from "./components/dashboards/userdash";
-import TechDash from "./components/dashboards/techdash";
-import AdminDash from "./components/dashboards/admindash";
+import UserDash from "./components/dashboards/user/userdash";
+import TechDash from "./components/dashboards/tech/techdash";
+import AdminDash from "./components/dashboards/admin/admindash";
 
 function App() {
   return (
