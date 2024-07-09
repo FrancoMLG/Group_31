@@ -52,6 +52,7 @@ const SigninForm = () => {
               src={`${process.env.PUBLIC_URL}/images/calendar-week.svg`}
               height="30"
               alt="Fake Company Logo"
+              style={{paddingRight: "10px"}}
             />
             Fake Company Name
           </Link>
