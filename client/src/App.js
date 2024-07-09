@@ -10,7 +10,6 @@ import AdminDash from "./components/dashboards/admindash";
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/signup" element={<SignupForm />} />
