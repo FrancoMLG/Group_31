@@ -5,7 +5,7 @@ import React, { useEffect, useRef } from "react";
 import UserSideBar from "./user_sidebar";
 import "./user_home.css";
 
-export default function User_home() {
+export default function UserHome() {
   const activeLinkId = "home-link";
 
   return (

@@ -50,7 +50,7 @@ export default function UserSideBar({ activeLinkId }) {
           </a>
         </li>
         <li>
-          <a href="#" id="schedule-link" className="nav-link link-body-emphasis" onClick={() => navigate("/userappts")}>
+          <a href="#" id="schedule-link" className="nav-link link-body-emphasis" onClick={() => navigate("/usersched")}>
             <img
               className="padded-img"
               src={`${process.env.PUBLIC_URL}/images/calendar-plus.svg`}
@@ -61,7 +61,7 @@ export default function UserSideBar({ activeLinkId }) {
           </a>
         </li>
         <li>
-          <a href="#" id="support-link" className="nav-link link-body-emphasis">
+          <a href="#" id="support-link" className="nav-link link-body-emphasis" onClick={() => navigate("/usersupport")}>
             <img
               className="padded-img"
               src={`${process.env.PUBLIC_URL}/images/envelope.svg`}
@@ -72,7 +72,7 @@ export default function UserSideBar({ activeLinkId }) {
           </a>
         </li>
         <li>
-          <a href="#" id="chat-link" className="nav-link link-body-emphasis">
+          <a href="#" id="chat-link" className="nav-link link-body-emphasis" onClick={() => navigate("/userchat")}>
             <img
               className="padded-img"
               src={`${process.env.PUBLIC_URL}/images/chat-left-dots.svg`}
