@@ -38,44 +38,44 @@ export default function UserDash() {
             <a href="#" className="nav-link link-body-emphasis">
               <img
                 className="padded-img"
-                src={`${process.env.PUBLIC_URL}/images/house.svg`}
+                src={`${process.env.PUBLIC_URL}/images/calendar-event.svg`}
                 height="20"
                 alt="Fake Company Logo"
               />
-              Dashboard
+              Appointments
             </a>
           </li>
           <li>
             <a href="#" className="nav-link link-body-emphasis">
               <img
                 className="padded-img"
-                src={`${process.env.PUBLIC_URL}/images/house.svg`}
+                src={`${process.env.PUBLIC_URL}/images/calendar-plus.svg`}
                 height="20"
                 alt="Fake Company Logo"
               />
-              Orders
+              Schedule Appointment
             </a>
           </li>
           <li>
             <a href="#" className="nav-link link-body-emphasis">
               <img
                 className="padded-img"
-                src={`${process.env.PUBLIC_URL}/images/house.svg`}
+                src={`${process.env.PUBLIC_URL}/images/envelope.svg`}
                 height="20"
                 alt="Fake Company Logo"
               />
-              Products
+              Contact Support
             </a>
           </li>
           <li>
             <a href="#" className="nav-link link-body-emphasis">
               <img
                 className="padded-img"
-                src={`${process.env.PUBLIC_URL}/images/house.svg`}
+                src={`${process.env.PUBLIC_URL}/images/chat-left-dots.svg`}
                 height="20"
                 alt="Fake Company Logo"
               />
-              Customers
+              Chat
             </a>
           </li>
         </ul>
@@ -85,13 +85,13 @@ export default function UserDash() {
             Username Here
           </a>
           <ul className="dropdown-menu text-small shadow">
-            <li><a className="dropdown-item" href="#">User options?</a></li>
-            <li><a className="dropdown-item" href="#">Maybe get rid of this</a></li>
-            <li><hr className="dropdown-divider" /></li>
             <li><a className="dropdown-item" href="#">Sign out</a></li>
           </ul>
         </div>
       </div>
+
+
+
     </div>
   );
 }
