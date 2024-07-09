@@ -3,6 +3,7 @@ import Homepage from "./components/homepage";
 import SignupForm from "./components/Auth/signup";
 import SigninForm from "./components/Auth/signin";
 import Navbar from "./components/navbar";
+import About from "./components/about";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/signup" element={<SignupForm />} />
         <Route path="/signin" element={<SigninForm />} />
+		<Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   );
