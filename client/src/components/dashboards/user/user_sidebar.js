@@ -21,9 +21,9 @@ export default function UserSideBar() {
         <hr />
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
-            <a href="#" className="nav-link active" aria-current="page">
+            <a href="#" className="nav-link link-body-emphasis">
               <img
-                className="padded-img"Q
+                className="padded-img"
                 src={`${process.env.PUBLIC_URL}/images/house.svg`}
                 height="20"
                 alt="Fake Company Logo"
