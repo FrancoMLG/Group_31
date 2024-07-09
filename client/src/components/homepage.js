@@ -70,6 +70,12 @@ export default function Homepage() {
               Create an account to schedule and view appointments, access a live
               chat, and receive email updates on your appointments if requested.
             </p>
+            <button
+              type="button"
+              className="btn btn-outline-secondary btn-sm px-4 me-md-2"
+              onClick={() => navigate("/userdash")}>
+              To User Dashboard
+            </button>
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
@@ -85,6 +91,12 @@ export default function Homepage() {
               customers, and send updates about your work to those who need to
               know.
             </p>
+            <button
+              type="button"
+              className="btn btn-outline-secondary btn-sm px-4 me-md-2"
+              onClick={() => navigate("/techdash")}>
+              To Technician Dashboard
+            </button>
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
@@ -99,6 +111,12 @@ export default function Homepage() {
               View the appointments of your technicians, allocate administrator
               privileges to others, and alter assigned schedules if necessary.
             </p>
+            <button
+              type="button"
+              className="btn btn-outline-secondary btn-sm px-4 me-md-2"
+              onClick={() => navigate("/admindash")}>
+              To Admin Dashboard
+            </button>
           </div>
         </div>
       </div>
