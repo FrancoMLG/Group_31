@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import {useNavigate} from "react-router-dom";
 
-export default function TechDash() {
+export default function Techhome() {
   const navigate = useNavigate();
 
   const signedIn = localStorage.getItem("profile");
