@@ -70,7 +70,7 @@ const SignupForm = () => {
 
   return (
     <div className="container-fluid bg-body-tertiary">
-      <nav className="navbar navbar-expand-lg fixed-top bg-body-secondary">
+      <nav className="navbar navbar-expand-lg fixed-top bg-body-secondary" style={{paddingTop: "0"}}>
         <div className="container-fluid">
           <Link className="navbar-brand mx-2" to="/">
             <img
