@@ -1,31 +1,24 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { Link, useNavigate } from "react-router-dom";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import UserSideBar from "./user_sidebar";
-import "./userhome.css"
-
-
-function setActiveLink() {
-    document.getQuerySelector("UserSidebar #home-link").classList.toggle("active");
-    document.getQuerySelector("UserSidebar #home-link").classList.toggle('aria-current="page"');
-}
+import "./userhome.css";
 
 export default function UserHome() {
-  // const navigate = useNavigate();
+  const homeLinkRef = useRef(null);
 
-  const signedIn = localStorage.getItem("profile");
-
-  // <a href="#" className="nav-link active" aria-current="page"> code for setting active part of dashboard?
+  useEffect(() => {
+    if (homeLinkRef.current) {
+      homeLinkRef.current.classList.add("active");
+      homeLinkRef.current.setAttribute("aria-current", "page");
+      homeLinkRef.current.classList.toggle("link-body-emphasis")
+    }
+  }, []);
 
   return (
     <div className="container-fluid bg-body-tertiary vh-100 d-flex flex-column no-padding">
-
-      <UserSideBar />
-
+      <UserSideBar homeLinkRef={homeLinkRef} />
     </div>
-
   );
-
-
 }
