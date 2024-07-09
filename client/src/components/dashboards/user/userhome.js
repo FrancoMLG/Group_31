@@ -6,19 +6,12 @@ import UserSideBar from "./user_sidebar";
 import "./userhome.css";
 
 export default function UserHome() {
-  const homeLinkRef = useRef(null);
-
-  useEffect(() => {
-    if (homeLinkRef.current) {
-      homeLinkRef.current.classList.add("active");
-      homeLinkRef.current.setAttribute("aria-current", "page");
-      homeLinkRef.current.classList.toggle("link-body-emphasis")
-    }
-  }, []);
+  const activeLinkId = "home-link";
 
   return (
     <div className="container-fluid bg-body-tertiary vh-100 d-flex flex-column no-padding">
-      <UserSideBar homeLinkRef={homeLinkRef} />
+      <UserSideBar activeLinkId={activeLinkId} />
     </div>
   );
 }
+
