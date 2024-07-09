@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import "./signup.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import {signUp} from "../../api/index.js";
 import {useNavigate, Link} from "react-router-dom";
 
@@ -91,7 +93,7 @@ const SignupForm = () => {
         </div>
       </nav>
 
-      <div className="signup-form">
+      <div className="signup-form py-4">
         <h2>Sign Up</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -176,6 +178,25 @@ const SignupForm = () => {
           <p className="mt-5 mb-3 text-body-secondary">© 2017–2024</p>
         </form>
       </div>
+
+      <div className="container">
+        <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div className="col-md-4 d-flex align-items-center">
+            <a
+              href="/"
+              className="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+              <img
+                src={`${process.env.PUBLIC_URL}/images/calendar-week.svg`}
+                height="30"
+              />
+            </a>
+            <span className="mb-3 mb-md-0 text-body-secondary">
+              © Cool Coders, Group 31
+            </span>
+          </div>
+        </footer>
+      </div>
+
     </div>
   );
 };
