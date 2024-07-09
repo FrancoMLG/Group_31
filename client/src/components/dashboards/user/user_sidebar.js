@@ -84,12 +84,12 @@ export default function UserSideBar({ activeLinkId }) {
         </li>
       </ul>
       <div className="dropdown mt-auto">
-        <a href="#" className="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <a className="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
           <img src={`${process.env.PUBLIC_URL}/images/person-circle-dark.svg`} alt="" width="32" height="32" className="rounded-circle me-2"></img>
           Username Here
         </a>
         <ul className="dropdown-menu text-small shadow">
-          <li><a className="dropdown-item" href="#">Sign out</a></li>
+          <li><a className="dropdown-item" href="#" onClick={() => navigate("/")}>Sign out</a></li>
         </ul>
       </div>
     </div>

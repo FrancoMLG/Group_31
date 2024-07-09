@@ -10,7 +10,16 @@ export default function UserAppointments() {
 
   return (
     <div className="container-fluid bg-body-tertiary vh-100 d-flex flex-column no-padding">
-      <UserSideBar activeLinkId={activeLinkId} />
+      <div className="row flex-grow-1">
+        <div className="col-auto">
+          <UserSideBar activeLinkId={activeLinkId} />
+        </div>
+        <div className="col overflow-auto">
+
+          <p>Insert More Content Here!</p>
+
+        </div>
+      </div>
     </div>
   );
 }
