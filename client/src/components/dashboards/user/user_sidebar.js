@@ -21,7 +21,7 @@ export default function UserSideBar() {
         <hr />
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
-            <a href="#" className="nav-link link-body-emphasis">
+            <a href="#" id="home-link" className="nav-link link-body-emphasis">
               <img
                 className="padded-img"
                 src={`${process.env.PUBLIC_URL}/images/house.svg`}
@@ -32,7 +32,7 @@ export default function UserSideBar() {
             </a>
           </li>
           <li>
-            <a href="#" className="nav-link link-body-emphasis">
+            <a href="#" id="appointments-link" className="nav-link link-body-emphasis">
               <img
                 className="padded-img"
                 src={`${process.env.PUBLIC_URL}/images/calendar-event.svg`}
@@ -43,7 +43,7 @@ export default function UserSideBar() {
             </a>
           </li>
           <li>
-            <a href="#" className="nav-link link-body-emphasis">
+            <a href="#" id="schedule-link" className="nav-link link-body-emphasis">
               <img
                 className="padded-img"
                 src={`${process.env.PUBLIC_URL}/images/calendar-plus.svg`}
@@ -54,7 +54,7 @@ export default function UserSideBar() {
             </a>
           </li>
           <li>
-            <a href="#" className="nav-link link-body-emphasis">
+            <a href="#" id="support-link" className="nav-link link-body-emphasis">
               <img
                 className="padded-img"
                 src={`${process.env.PUBLIC_URL}/images/envelope.svg`}
@@ -65,7 +65,7 @@ export default function UserSideBar() {
             </a>
           </li>
           <li>
-            <a href="#" className="nav-link link-body-emphasis">
+            <a href="#" id="chat-link" className="nav-link link-body-emphasis">
               <img
                 className="padded-img"
                 src={`${process.env.PUBLIC_URL}/images/chat-left-dots.svg`}
