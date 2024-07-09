@@ -203,3 +203,92 @@ const SignupForm = () => {
 };
 
 export default SignupForm;
+
+/*
+
+      <main className="container py-2">
+        <div className="row justify-content-center mt-5 py-2">
+          <div className="col-sm-8 col-md-6 col-lg-4 py-5">
+            <div className="form-signup">
+              <form onSubmit={handleSubmit}>
+                <img
+                  className="mb-4"
+                  src={`${process.env.PUBLIC_URL}/images/calendar-week.svg`}
+                  alt=""
+                  width="72"
+                  height="57"
+                />
+                <h1 className="h3 mb-3 fw-normal">Sign Up</h1>
+
+                <div className="form-floating py-1">
+                  <input
+                    value={formData.email}
+                    onChange={handleChange}
+                    name="email"
+                    type="email"
+                    className="form-control"
+                    id="floatingInput"
+                    placeholder="name@example.com"
+                  />
+                  <label htmlFor="floatingInput">First Name</label>
+                </div>
+                <div className="form-floating py-1">
+                  <input
+                    value={formData.password}
+                    onChange={handleChange}
+                    name="password"
+                    type="password"
+                    className="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                  />
+                  <label htmlFor="floatingPassword">Last Name</label>
+                </div>
+                <div className="form-floating py-1">
+                  <input
+                    value={formData.password}
+                    onChange={handleChange}
+                    name="password"
+                    type="password"
+                    className="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                  />
+                  <label htmlFor="floatingPassword">Email Address</label>
+                </div>
+                <div className="form-floating py-1">
+                  <input
+                    value={formData.password}
+                    onChange={handleChange}
+                    name="password"
+                    type="password"
+                    className="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                  />
+                  <label htmlFor="floatingPassword">Password</label>
+                </div>
+                <div className="form-floating py-1">
+                  <input
+                    value={formData.password}
+                    onChange={handleChange}
+                    name="password"
+                    type="password"
+                    className="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                  />
+                  <label htmlFor="floatingPassword">Confirm Password</label>
+                </div>
+
+
+                <button className="btn btn-primary w-100 my-2 py-2" type="submit">
+                  Sign Up
+                </button>
+                <p className="mt-5 mb-3 text-body-secondary">© 2017–2024</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+ */
