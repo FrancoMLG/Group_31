@@ -8,7 +8,7 @@ import UserAppointments from "./components/dashboards/user/user_appts";
 import UserSchedule from "./components/dashboards/user/user_sched";
 import UserSupport from "./components/dashboards/user/user_support";
 import UserChat from "./components/dashboards/user/user_chat";
-import TechHome from "./components/dashboards/tech/techhome";
+import TechHome from "./components/dashboards/tech/tech_home";
 import AdminDash from "./components/dashboards/admin/adminhome";
 import UserTicket from "./components/tickets/userticket";
 
