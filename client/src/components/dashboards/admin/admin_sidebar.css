@@ -1,0 +1,11 @@
+
+.padded-img {
+    padding-right: 10px;
+}
+.no-padding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.nav-link.active img {
+  filter: brightness(0) invert(1);
+}

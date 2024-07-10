@@ -13,7 +13,9 @@ import TechTickets from "./components/dashboards/tech/tech_tickets";
 import TechCalendar from "./components/dashboards/tech/tech_calendar";
 import TechMessages from "./components/dashboards/tech/tech_messages";
 import TechChat from "./components/dashboards/tech/tech_chat";
-import AdminDash from "./components/dashboards/admin/adminhome";
+import AdminHome from "./components/dashboards/admin/admin_home";
+import AdminSchedule from "./components/dashboards/admin/admin_schedule";
+import AdminGrant from "./components/dashboards/admin/admin_grant";
 import UserTicket from "./components/tickets/userticket";
 import About from "./components/Auth/about";
 
@@ -22,6 +24,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
+		<Route path="/about" element={<About />} />
         <Route path="/signup" element={<SignupForm />} />
         <Route path="/signin" element={<SigninForm />} />
         <Route path="/userhome" element={<UserHome />} />
@@ -34,9 +37,10 @@ function App() {
         <Route path="/techcalendar" element={<TechCalendar />} />
         <Route path="/techmessages" element={<TechMessages />} />
         <Route path="/techchat" element={<TechChat />} />
-        <Route path="/adminhome" element={<AdminDash />} />
+        <Route path="/adminhome" element={<AdminHome />} />
+        <Route path="/adminschedule" element={<AdminSchedule />} />
+        <Route path="/admingrant" element={<AdminGrant />} />
         <Route path="/userticket" element={<UserTicket />} />
-		<Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   );
