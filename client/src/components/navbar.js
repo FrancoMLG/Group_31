@@ -28,7 +28,9 @@ export default function Navbar() {
   }, [location]);
 
   return (
-    <nav className="navbar navbar-expand-lg fixed-top bg-body-secondary" style={{paddingTop: "0"}}>
+    <nav
+      className="navbar navbar-expand-lg fixed-top bg-body-secondary"
+      style={{paddingTop: "0"}}>
       <div className="container-fluid">
         <a className="navbar-brand mx-2" href="#">
           <img
@@ -55,7 +57,10 @@ export default function Navbar() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" onClick={navigate("/about")}>
+              <a
+                className="nav-link"
+                href="#"
+                onClick={() => navigate("/about")}>
                 About
               </a>
             </li>
