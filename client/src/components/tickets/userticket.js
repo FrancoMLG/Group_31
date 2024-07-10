@@ -40,7 +40,7 @@ const MaintenanceRequestForm = () => {
     };
 
     return (
-        <div id="outside">
+        <div id="outside user-ticket">
             <form id="survey-form" onSubmit={handleSubmit}>
                 <h1 id="title">Submit a Maintenance Request</h1>
                 <p id="description">Please fill out all fields.</p>

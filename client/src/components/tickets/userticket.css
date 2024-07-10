@@ -1,4 +1,4 @@
-body {
+.user-ticket * {
 	font-family: "Anaheim";
 	font-size: 15px;
 }
@@ -29,13 +29,13 @@ textarea::placeholder {
   color: #999; 
 }
 
-h1 {
+.user-ticket h1 {
 	font-size: 25px;
 	text-align: center;
   font-weight: bold;
 }
 
-form {
+.user-ticket form {
 	margin: 0 auto;
 	width: 70%;
 	padding: 20px;
@@ -47,14 +47,14 @@ form {
 	background-color: white;
 }
 
-fieldset {
+.user-ticket fieldset {
 	border: 1px solid lightgray;
 	margin: 10px;
   padding: 20px;
 }
 
 
-textarea {
+.user-ticket textarea {
 	vertical-align: top;
 	height: 10em;
 	width: 500px;
@@ -64,11 +64,11 @@ textarea {
 	resize: vertical;
 }
 
-.button {
+.user-ticket .button {
 	padding-left: 90px; 
 }
 
-button {
+.user-ticket button {
 	margin: 0.5em;
 	font-size: 1em;
 	background-color: white; 
@@ -84,7 +84,7 @@ button {
 	justify-content: center;
 }
 
-.error {
+.user-ticket .error {
   color: red;
   font-size: 12px;
   margin-bottom: 0px;
