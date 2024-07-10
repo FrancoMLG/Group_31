@@ -3,13 +3,10 @@ import Homepage from "./components/homepage";
 import SignupForm from "./components/Auth/signup";
 import SigninForm from "./components/Auth/signin";
 import Navbar from "./components/navbar";
-<<<<<<< HEAD
-import About from "./components/about";
-=======
 import UserDash from "./components/dashboards/userdash";
 import TechDash from "./components/dashboards/techdash";
 import AdminDash from "./components/dashboards/admindash";
->>>>>>> 5f46906229b33a64c934e478b715face774407d0
+import About from "./components/Auth/about";
 
 function App() {
   return (
@@ -18,12 +15,10 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/signup" element={<SignupForm />} />
         <Route path="/signin" element={<SigninForm />} />
-<<<<<<< HEAD
-=======
         <Route path="/userdash" element={<UserDash />} />
         <Route path="/techdash" element={<TechDash />} />
         <Route path="/admindash" element={<AdminDash />} />
->>>>>>> 5f46906229b33a64c934e478b715face774407d0
+		<Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   );
