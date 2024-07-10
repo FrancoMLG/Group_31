@@ -10,6 +10,7 @@ import UserSupport from "./components/dashboards/user/user_support";
 import UserChat from "./components/dashboards/user/user_chat";
 import TechHome from "./components/dashboards/tech/techhome";
 import AdminDash from "./components/dashboards/admin/adminhome";
+import UserTicket from "./components/tickets/userticket";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/userchat" element={<UserChat />} />
         <Route path="/techhome" element={<TechHome />} />
         <Route path="/adminhome" element={<AdminDash />} />
+        <Route path="/userticket" element={<UserTicket />} />
       </Routes>
     </BrowserRouter>
   );
