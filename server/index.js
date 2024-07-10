@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import ticketRoutes from "./routes/tickets.js";
 import userRoutes from "./routes/users.js";
 import dotenv from "dotenv";
 
@@ -12,6 +13,7 @@ app.use(express.urlencoded({limit: "30mb", extended: true}));
 
 app.use(cors());
 
+app.use("/tickets", ticketRoutes);
 app.use("/users", userRoutes);
 
 app.get("/", (req, res) => {
