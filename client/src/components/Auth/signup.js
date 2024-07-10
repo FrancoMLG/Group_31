@@ -70,13 +70,14 @@ const SignupForm = () => {
 
   return (
     <div className="container-fluid bg-body-tertiary">
-      <nav className="navbar navbar-expand-lg fixed-top bg-body-secondary">
+      <nav className="navbar navbar-expand-lg fixed-top bg-body-secondary" style={{paddingTop: "0"}}>
         <div className="container-fluid">
           <Link className="navbar-brand mx-2" to="/">
             <img
               src={`${process.env.PUBLIC_URL}/images/calendar-week.svg`}
               height="30"
               alt="Fake Company Logo"
+              style={{paddingRight: "10px"}}
             />
             Fake Company Name
           </Link>
@@ -202,3 +203,92 @@ const SignupForm = () => {
 };
 
 export default SignupForm;
+
+/*
+
+      <main className="container py-2">
+        <div className="row justify-content-center mt-5 py-2">
+          <div className="col-sm-8 col-md-6 col-lg-4 py-5">
+            <div className="form-signup">
+              <form onSubmit={handleSubmit}>
+                <img
+                  className="mb-4"
+                  src={`${process.env.PUBLIC_URL}/images/calendar-week.svg`}
+                  alt=""
+                  width="72"
+                  height="57"
+                />
+                <h1 className="h3 mb-3 fw-normal">Sign Up</h1>
+
+                <div className="form-floating py-1">
+                  <input
+                    value={formData.email}
+                    onChange={handleChange}
+                    name="email"
+                    type="email"
+                    className="form-control"
+                    id="floatingInput"
+                    placeholder="name@example.com"
+                  />
+                  <label htmlFor="floatingInput">First Name</label>
+                </div>
+                <div className="form-floating py-1">
+                  <input
+                    value={formData.password}
+                    onChange={handleChange}
+                    name="password"
+                    type="password"
+                    className="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                  />
+                  <label htmlFor="floatingPassword">Last Name</label>
+                </div>
+                <div className="form-floating py-1">
+                  <input
+                    value={formData.password}
+                    onChange={handleChange}
+                    name="password"
+                    type="password"
+                    className="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                  />
+                  <label htmlFor="floatingPassword">Email Address</label>
+                </div>
+                <div className="form-floating py-1">
+                  <input
+                    value={formData.password}
+                    onChange={handleChange}
+                    name="password"
+                    type="password"
+                    className="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                  />
+                  <label htmlFor="floatingPassword">Password</label>
+                </div>
+                <div className="form-floating py-1">
+                  <input
+                    value={formData.password}
+                    onChange={handleChange}
+                    name="password"
+                    type="password"
+                    className="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                  />
+                  <label htmlFor="floatingPassword">Confirm Password</label>
+                </div>
+
+
+                <button className="btn btn-primary w-100 my-2 py-2" type="submit">
+                  Sign Up
+                </button>
+                <p className="mt-5 mb-3 text-body-secondary">© 2017–2024</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+ */

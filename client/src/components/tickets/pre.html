@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="pre.css">
+</head>
+
+<body>
+    <div id="outside">
+        <form id="survey-form" method="post">
+            <h1 id="title">Submit a Maintenance Request</h1>
+            <p id="description">
+                Please fill out all fields.
+            </p>
+
+            <fieldset>
+                <div>
+                    <label for="politics">Type of issue:</label>
+                    <select id="dropdown">
+                        <option value="" disabled selected>Select one</option>
+                        <option value="left">Software</option>
+                        <option value="right">Hardware</option>
+                        <option value="conservative">Other option</option>
+                        <option value="nazi">idk</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div>
+                    <label for="message">Description of issue:</label>
+                    <br>
+                    <textarea id="msg" name="user_message" rows="5" cols="50"
+                        placeholder="Please describe your issue"></textarea>
+
+                </div>
+            </fieldset>
+
+            <div id="submitbutton">
+                <button type="submit" id="submitformbutton">Submit</button>
+            </div>
+        </form>
+    </div>
+    <!-- https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation -->
+</body>

@@ -1,0 +1,92 @@
+.user-ticket * {
+	font-family: "Anaheim";
+	font-size: 15px;
+}
+
+#description {
+	margin-left: 13px;
+}
+
+#outside {
+	background-color: rgb(255, 255, 255);
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+#msg {
+	margin-top: 5px; 
+}
+
+#dropdown {
+  width: 150px; 
+  height: 25px; 
+  margin-left: 10px;
+}
+
+textarea::placeholder {
+  font-family: "Anaheim"; 
+  font-size: 14px; 
+  color: #999; 
+}
+
+.user-ticket h1 {
+	font-size: 25px;
+	text-align: center;
+  font-weight: bold;
+}
+
+.user-ticket form {
+	margin: 0 auto;
+	width: 70%;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 1em;
+}
+
+#survey-form {
+	background-color: white;
+}
+
+.user-ticket fieldset {
+	border: 1px solid lightgray;
+	margin: 10px;
+  padding: 20px;
+}
+
+
+.user-ticket textarea {
+	vertical-align: top;
+	height: 10em;
+	width: 500px;
+  padding: 5px;
+  margin-bottom: 5px;
+
+	resize: vertical;
+}
+
+.user-ticket .button {
+	padding-left: 90px; 
+}
+
+.user-ticket button {
+	margin: 0.5em;
+	font-size: 1em;
+	background-color: white; 
+	color: black; 
+	border: 1px solid black; 
+	padding: 10px;
+	border-radius: 8px; 
+  font-size: 17px;
+}
+
+#submitbutton {
+	display: flex;
+	justify-content: center;
+}
+
+.user-ticket .error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 0px;
+}
+
