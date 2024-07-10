@@ -13,4 +13,4 @@ api.interceptors.request.use((req) => {
 
 export const signIn = async (formData) => api.post("/users/signin", formData);
 export const signUp = async (formData) => api.post("/users/signup", formData);
-export const about = async (formData) => api.post("/users/about", formData);
+//export const about = async (formData) => api.post("/users/about", formData);
