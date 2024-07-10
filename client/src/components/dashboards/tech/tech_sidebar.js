@@ -39,7 +39,7 @@ export default function TechSideBar({ activeLinkId }) {
           </a>
         </li>
         <li>
-          <a href="#" id="appointments-link" className="nav-link link-body-emphasis" onClick={() => navigate("/techtickets")}>
+          <a href="#" id="tickets-link" className="nav-link link-body-emphasis" onClick={() => navigate("/techtickets")}>
             <img
               className="padded-img"
               src={`${process.env.PUBLIC_URL}/images/ticket-perforated.svg`}
@@ -61,7 +61,7 @@ export default function TechSideBar({ activeLinkId }) {
           </a>
         </li>
         <li>
-          <a href="#" id="message-link" className="nav-link link-body-emphasis" onClick={() => navigate("/techmessages")}>
+          <a href="#" id="messages-link" className="nav-link link-body-emphasis" onClick={() => navigate("/techmessages")}>
             <img
               className="padded-img"
               src={`${process.env.PUBLIC_URL}/images/envelope.svg`}

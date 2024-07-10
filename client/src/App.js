@@ -9,6 +9,10 @@ import UserSchedule from "./components/dashboards/user/user_sched";
 import UserSupport from "./components/dashboards/user/user_support";
 import UserChat from "./components/dashboards/user/user_chat";
 import TechHome from "./components/dashboards/tech/tech_home";
+import TechTickets from "./components/dashboards/tech/tech_tickets";
+import TechCalendar from "./components/dashboards/tech/tech_calendar";
+import TechMessages from "./components/dashboards/tech/tech_messages";
+import TechChat from "./components/dashboards/tech/tech_chat";
 import AdminDash from "./components/dashboards/admin/adminhome";
 import UserTicket from "./components/tickets/userticket";
 
@@ -25,6 +29,10 @@ function App() {
         <Route path="/usersupport" element={<UserSupport />} />
         <Route path="/userchat" element={<UserChat />} />
         <Route path="/techhome" element={<TechHome />} />
+        <Route path="/techtickets" element={<TechTickets />} />
+        <Route path="/techcalendar" element={<TechCalendar />} />
+        <Route path="/techmessages" element={<TechMessages />} />
+        <Route path="/techchat" element={<TechChat />} />
         <Route path="/adminhome" element={<AdminDash />} />
         <Route path="/userticket" element={<UserTicket />} />
       </Routes>
