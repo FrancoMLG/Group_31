@@ -1,0 +1,11 @@
+.no-padding {
+  padding: 0;
+}
+
+.bg-body-tertiary {
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.container-fluid {
+  padding-top: 20px;
+}

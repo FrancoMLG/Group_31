@@ -77,7 +77,7 @@ export default function Homepage() {
             <button
               type="button"
               className="btn btn-outline-secondary btn-sm px-4 me-md-2"
-              onClick={() => navigate("/userdash")}>
+              onClick={() => navigate("/userhome")}>
               To User Dashboard
             </button>
           </div>
@@ -98,7 +98,7 @@ export default function Homepage() {
             <button
               type="button"
               className="btn btn-outline-secondary btn-sm px-4 me-md-2"
-              onClick={() => navigate("/techdash")}>
+              onClick={() => navigate("/techhome")}>
               To Technician Dashboard
             </button>
           </div>
@@ -118,7 +118,7 @@ export default function Homepage() {
             <button
               type="button"
               className="btn btn-outline-secondary btn-sm px-4 me-md-2"
-              onClick={() => navigate("/admindash")}>
+              onClick={() => navigate("/adminhome")}>
               To Admin Dashboard
             </button>
           </div>
