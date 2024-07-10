@@ -35,7 +35,7 @@ export default function Navbar() {
         <a className="navbar-brand mx-2" href="#">
           <img
             src={`${process.env.PUBLIC_URL}/images/calendar-week.svg`}
-            height="30"
+            height="30" style={{paddingRight: "10px"}}
           />
           Fake Company Name
         </a>
