@@ -9,9 +9,6 @@ import Navbar from "../navbar";
 const About = () => {
   const navigate = useNavigate();
   return (
-    /*<div className="container-fluid bg-body-tertiary">
-	<p1>About page</p1>;
-	</div>*/
     <div className="container-fluid bg-body-tertiary">
       <nav
         className="navbar navbar-expand-lg fixed-top bg-body-secondary"
@@ -171,6 +168,24 @@ const About = () => {
             </div>
           </div>
         </div>
+      </div>
+	  
+	  <div className="container">
+        <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div className="col-md-4 d-flex align-items-center">
+            <a
+              href="/"
+              className="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+              <img
+                src={`${process.env.PUBLIC_URL}/images/calendar-week.svg`}
+                height="30"
+              />
+            </a>
+            <span className="mb-3 mb-md-0 text-body-secondary">
+              © Cool Coders, Group 31
+            </span>
+          </div>
+        </footer>
       </div>
     </div>
   );

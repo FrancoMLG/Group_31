@@ -1,0 +1,11 @@
+body{
+	.chat-input {
+  padding: 0.625em;
+  border: none;
+  border-radius: 0.5em;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 14pt;
+  width: 95%;
+  height: 50px;
+}}

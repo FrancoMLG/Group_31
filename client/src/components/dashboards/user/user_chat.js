@@ -15,9 +15,12 @@ export default function UserChat() {
           <UserSideBar activeLinkId={activeLinkId} />
         </div>
         <div className="col overflow-auto">
-
-          <p>Insert More Content Here!</p>
-
+			<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+			<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+		  <form class="chat-input-form">
+		  <input type="text" class="chat-input" required placeholder="Type here"/>
+		  <button type="submit" class="button send-button">Send</button>
+		  </form>
         </div>
       </div>
     </div>

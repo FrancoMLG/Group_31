@@ -74,21 +74,27 @@ export default function Navbar() {
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="#">
-                    User
+                  <a className="dropdown-item" 
+				  href="#"
+				  onClick={() => navigate("/userhome")}>
+                  User
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
-                    Technician
+                  <a className="dropdown-item" 
+				  href="#"
+				  onClick={() => navigate("/techhome")}>
+                  Technician
                   </a>
                 </li>
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
-                    Administrator
+                  <a className="dropdown-item" 
+				  href="#"
+				  onClick={() => navigate("/adminhome")}>
+                  Administrator
                   </a>
                 </li>
               </ul>
