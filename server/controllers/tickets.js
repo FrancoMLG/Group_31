@@ -1,5 +1,4 @@
 import Ticket from "../models/ticket.js";
-import mongoose from "mongoose";
 
 export const getTickets = async (req, res) => {
   try {
@@ -15,9 +14,9 @@ export const createTicket = async (req, res) => {
   try {
     const result = await Ticket.create({
       ...ticket,
-      creator: req.userId,
       createdAt: new Date().toISOString(),
     });
+    console.log(result);
     res.status(201).json(result);
   } catch (error) {
     res.status(409).json({message: error.message});

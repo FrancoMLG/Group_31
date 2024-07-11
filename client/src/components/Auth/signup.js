@@ -33,8 +33,9 @@ const SignupForm = () => {
     if (!formData.email) errors.email = "Email is required.";
     if (!formData.email) errors.email = "Email is required.";
     // does not actually check email, just format with chars @ chars . chars
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) errors.email = "Email must be valid.";
-    
+    else if (!/\S+@\S+\.\S+/.test(formData.email))
+      errors.email = "Email must be valid.";
+
     if (!formData.password) errors.password = "Password is required.";
     // checks for 8 chars, 1 num, 1 upper, 1 lower
     else if (
@@ -70,7 +71,9 @@ const SignupForm = () => {
 
   return (
     <div className="container-fluid bg-body-tertiary">
-      <nav className="navbar navbar-expand-lg fixed-top bg-body-secondary" style={{paddingTop: "0"}}>
+      <nav
+        className="navbar navbar-expand-lg fixed-top bg-body-secondary"
+        style={{paddingTop: "0"}}>
         <div className="container-fluid">
           <Link className="navbar-brand mx-2" to="/">
             <img
@@ -197,7 +200,6 @@ const SignupForm = () => {
           </div>
         </footer>
       </div>
-
     </div>
   );
 };

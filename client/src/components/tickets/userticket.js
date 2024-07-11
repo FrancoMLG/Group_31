@@ -1,81 +1,112 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./userticket.css";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
+import {createTicket} from "../../api";
 
 const MaintenanceRequestForm = () => {
-    const navigate = useNavigate();
-    
-    const [issueType, setIssueType] = useState('');
-    const [description, setDescription] = useState('');
-    
-    const [formErrors, setFormErrors] = useState({});
+  const navigate = useNavigate();
 
-    const validate = () => {
-        let formIsValid = true;
-        let errors = {};
+  const [formData, setFormData] = useState({
+    description: "",
+    creator: "",
+    status: "Open",
+    category: "",
+  });
 
-        if (!issueType) {
-            errors.issueType = "Type of issue is required.";
-            formIsValid = false;
-        }
+  const [formErrors, setFormErrors] = useState({});
 
-        if (!description) {
-            errors.description = "Description of issue is required.";
-            formIsValid = false;
-        }
+  const validate = () => {
+    let formIsValid = true;
+    let errors = {};
 
-        setFormErrors(errors);
-        return formIsValid;
-    };
+    if (!formData.category) {
+      errors.category = "Type of issue is required.";
+      formIsValid = false;
+    }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const errors = validate();
-        if (Object.keys(errors).length === 0) {
-            
-        }
-        else {
-            setFormErrors(errors);
-          }
-    };
+    if (!formData.description) {
+      errors.description = "Description of issue is required.";
+      formIsValid = false;
+    }
 
-    return (
-        <div id="outside user-ticket">
-            <form id="survey-form" onSubmit={handleSubmit}>
-                <h1 id="title">Submit a Maintenance Request</h1>
-                <p id="description">Please fill out all fields.</p>
+    setFormErrors(errors);
+    return formIsValid;
+  };
 
-                <fieldset>
-                    <div>
-                        <label htmlFor="dropdown">Type of issue:</label>
-                        <select id="dropdown" value={issueType} onChange={(e) => setIssueType(e.target.value)}>
-                            <option value="" disabled>Select one</option>
-                            <option value="Software">Software</option>
-                            <option value="Hardware">Hardware</option>
-                            <option value="Other option">Other option</option>
-                            <option value="idk">idk</option>
-                        </select>
-                            {formErrors.issueType && <p className="error">{formErrors.issueType}</p>}
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formIsValid = validate();
+    if (formIsValid) {
+      const user = JSON.parse(localStorage.getItem("profile"));
 
-                    </div>
-                </fieldset>
+      const updatedFormData = {
+        ...formData,
+        creator: user.result._id,
+      };
 
-                <fieldset>
-                    <div>
-                        <label htmlFor="msg">Description of issue:</label>
-                        <br />
-                        <textarea id="msg" name="user_message" rows="5" cols="50"
-                            placeholder="Please describe your issue"
-                            value={description} onChange={(e) => setDescription(e.target.value)} />
-                    </div>
-                </fieldset>
+      await createTicket(updatedFormData);
+    }
+  };
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
-                <div id="submitbutton">
-                    <button type="submit" id="submitformbutton">Submit</button>
-                </div>
-            </form>
+  return (
+    <div id="outside user-ticket">
+      <form id="survey-form" onSubmit={handleSubmit}>
+        <h1 id="title">Submit a Maintenance Request</h1>
+        <p id="description">Please fill out all fields.</p>
+
+        <fieldset>
+          <div>
+            <label htmlFor="dropdown">Type of issue:</label>
+            <select
+              id="dropdown"
+              name="category"
+              value={formData.category}
+              onChange={handleChange}>
+              <option value="" disabled>
+                Select one
+              </option>
+              <option value="Software">Software</option>
+              <option value="Hardware">Hardware</option>
+              <option value="Other option">Other option</option>
+              <option value="idk">idk</option>
+            </select>
+            {formErrors.category && (
+              <p className="error">{formErrors.category}</p>
+            )}
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div>
+            <label htmlFor="msg">Description of issue:</label>
+            <br />
+            <textarea
+              id="msg"
+              name="description"
+              rows="5"
+              cols="50"
+              placeholder="Please describe your issue"
+              value={formData.description}
+              onChange={handleChange}
+            />
+          </div>
+        </fieldset>
+
+        <div id="submitbutton">
+          <button type="submit" id="submitformbutton">
+            Submit
+          </button>
         </div>
-    );
-}
+      </form>
+    </div>
+  );
+};
 
 export default MaintenanceRequestForm;

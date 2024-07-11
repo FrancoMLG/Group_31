@@ -11,5 +11,9 @@ api.interceptors.request.use((req) => {
   return req;
 });
 
+export const fetchTickets = async () => api.get("/tickets");
+export const createTicket = async (newTicket) =>
+  api.post("/tickets", newTicket);
+
 export const signIn = async (formData) => api.post("/users/signin", formData);
 export const signUp = async (formData) => api.post("/users/signup", formData);
