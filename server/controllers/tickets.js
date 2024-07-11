@@ -9,6 +9,15 @@ export const getTickets = async (req, res) => {
   }
 };
 
+export const getTicketsByUser = async (req, res) => {
+  try {
+    const tickets = await Ticket.find({creator: req.params.id});
+    res.status(200).json(tickets);
+  } catch (error) {
+    res.status(404).json({message: error.message});
+  }
+};
+
 export const createTicket = async (req, res) => {
   const ticket = req.body;
   try {

@@ -36,15 +36,21 @@ const MaintenanceRequestForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formIsValid = validate();
-    if (formIsValid) {
-      const user = JSON.parse(localStorage.getItem("profile"));
 
-      const updatedFormData = {
-        ...formData,
-        creator: user.result._id,
-      };
+    try {
+      if (formIsValid) {
+        const user = JSON.parse(localStorage.getItem("profile"));
 
-      await createTicket(updatedFormData);
+        const updatedFormData = {
+          ...formData,
+          creator: user.result._id,
+        };
+
+        await createTicket(updatedFormData);
+        navigate("/userappts");
+      }
+    } catch (error) {
+      console.error(error);
     }
   };
   const handleChange = (e) => {
