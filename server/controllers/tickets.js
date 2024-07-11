@@ -1,4 +1,5 @@
 import Ticket from "../models/ticket.js";
+import mongoose from "mongoose";
 
 export const getTickets = async (req, res) => {
   try {
@@ -11,7 +12,18 @@ export const getTickets = async (req, res) => {
 
 export const getTicketsByUser = async (req, res) => {
   try {
-    const tickets = await Ticket.find({creator: req.params.id});
+    const tickets = await Ticket.find({creator: req.params.id}).populate(
+      "technician"
+    );
+    res.status(200).json(tickets);
+  } catch (error) {
+    res.status(404).json({message: error.message});
+  }
+};
+
+export const getTicketsByTechnician = async (req, res) => {
+  try {
+    const tickets = await Ticket.find({technician: req.params.id});
     res.status(200).json(tickets);
   } catch (error) {
     res.status(404).json({message: error.message});
@@ -27,6 +39,26 @@ export const createTicket = async (req, res) => {
     });
     console.log(result);
     res.status(201).json(result);
+  } catch (error) {
+    res.status(409).json({message: error.message});
+  }
+};
+
+export const updateTicket = async (req, res) => {
+  const {id: _id} = req.params;
+  const ticket = req.body;
+
+  try {
+    if (!mongoose.Types.ObjectId.isValid(_id))
+      return res.status(404).send("No ticket with that id");
+
+    const updatedTicket = await Ticket.findByIdAndUpdate(
+      _id,
+      {...ticket, _id},
+      {new: true}
+    );
+
+    res.status(200).json(updatedTicket);
   } catch (error) {
     res.status(409).json({message: error.message});
   }

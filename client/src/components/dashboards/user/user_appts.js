@@ -17,7 +17,6 @@ export default function UserAppointments() {
       try {
         const user = JSON.parse(localStorage.getItem("profile"));
         const data = await fetchTicketsByUser(user.result._id);
-        console.log(data.data);
         setTickets(data.data);
       } catch (error) {
         console.error(error);
@@ -56,7 +55,13 @@ export default function UserAppointments() {
                   <tr key={ticket._id}>
                     <td>{ticket.category}</td>
                     <td>{ticket.description}</td>
-                    <td>{ticket.status}</td>
+                    <td>
+                      {ticket.status === "Open"
+                        ? "Open"
+                        : ticket.technician.firstName +
+                          " " +
+                          ticket.technician.lastName}
+                    </td>
                     <td>{formatDate(ticket.createdAt)}</td>
                   </tr>
                 ))}
