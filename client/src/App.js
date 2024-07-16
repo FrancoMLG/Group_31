@@ -18,6 +18,7 @@ import AdminSchedule from "./components/dashboards/admin/admin_schedule";
 import AdminGrant from "./components/dashboards/admin/admin_grant";
 import UserTicket from "./components/tickets/userticket";
 import About from "./components/Auth/about";
+import Calendar from "./components/calendar/Calendar";
 
 function App() {
   return (
