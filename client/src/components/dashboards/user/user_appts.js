@@ -52,7 +52,9 @@ export default function UserAppointments() {
               </thead>
               <tbody>
                 {tickets.map((ticket) => (
-                  <tr key={ticket._id}>
+                  <tr
+                    key={ticket._id}
+                    onClick={() => navigate(`/ticket/${ticket._id}`)}>
                     <td>{ticket.category}</td>
                     <td>{ticket.description}</td>
                     <td>

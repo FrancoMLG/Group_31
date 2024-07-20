@@ -12,7 +12,8 @@ api.interceptors.request.use((req) => {
 });
 
 export const fetchTickets = async () => api.get("/tickets");
-export const fetchTicketsByUser = async (id) => api.get(`/tickets/${id}`);
+export const fetchTicket = async (id) => api.get(`/tickets/${id}`);
+export const fetchTicketsByUser = async (id) => api.get(`/tickets/user/${id}`);
 export const fetchTicketsByTechnician = async (id) =>
   api.get(`/tickets/tech/${id}`);
 export const createTicket = async (newTicket) =>

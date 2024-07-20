@@ -7,7 +7,7 @@ import {fetchTickets, updateTicket} from "../../../api";
 
 export default function TechTickets() {
   const activeLinkId = "tickets-link";
-
+  const navigate = useNavigate();
   const [tickets, setTickets] = useState([]);
 
   useEffect(() => {
@@ -65,7 +65,9 @@ export default function TechTickets() {
                 {tickets.map(
                   (ticket) =>
                     ticket.status === "Open" && (
-                      <tr key={ticket._id}>
+                      <tr
+                        key={ticket._id}
+                        onClick={() => navigate(`/ticket/${ticket._id}`)}>
                         <td>{ticket.category}</td>
                         <td>{ticket.description}</td>
                         <td>{formatDate(ticket.createdAt)}</td>

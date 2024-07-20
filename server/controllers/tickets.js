@@ -10,6 +10,23 @@ export const getTickets = async (req, res) => {
   }
 };
 
+export const getTicket = async (req, res) => {
+  const {id} = req.params;
+  try {
+    if (!mongoose.Types.ObjectId.isValid(id))
+      return res.status(404).send("No ticket with that id");
+
+    const ticket = await Ticket.findById(id)
+      .populate("creator")
+      .populate("technician")
+      .populate("messages.sender");
+
+    res.status(200).json(ticket);
+  } catch (error) {
+    res.status(404).json({message: error.message});
+  }
+};
+
 export const getTicketsByUser = async (req, res) => {
   try {
     const tickets = await Ticket.find({creator: req.params.id}).populate(
@@ -35,7 +52,9 @@ export const createTicket = async (req, res) => {
   try {
     const result = await Ticket.create({
       ...ticket,
+      technician: null,
       createdAt: new Date().toISOString(),
+      messages: [],
     });
     console.log(result);
     res.status(201).json(result);

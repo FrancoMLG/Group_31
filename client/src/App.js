@@ -19,6 +19,7 @@ import AdminGrant from "./components/dashboards/admin/admin_grant";
 import UserTicket from "./components/tickets/userticket";
 import About from "./components/Auth/about";
 import Calendar from "./components/calendar/Calendar";
+import TicketDetail from "./components/tickets/ticketDetails";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/signup" element={<SignupForm />} />
         <Route path="/signin" element={<SigninForm />} />
+        <Route path="/ticket/:id" element={<TicketDetail />} />
         <Route path="/userhome" element={<UserHome />} />
         <Route path="/userappts" element={<UserAppointments />} />
         <Route path="/usersched" element={<UserSchedule />} />
