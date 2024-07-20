@@ -15,6 +15,7 @@ export default function TechHome() {
     const fetchData = async () => {
       try {
         const user = JSON.parse(localStorage.getItem("profile"));
+        if (!user) return;
         const data = await fetchTicketsByTechnician(user.result._id);
         setTickets(data.data);
       } catch (error) {

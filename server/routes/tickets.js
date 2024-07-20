@@ -7,14 +7,15 @@ import {
   getTicketsByTechnician,
   getTicket,
 } from "../controllers/tickets.js";
+import auth from "../middleware/auth.js";
 
 const router = express.Router();
 
-router.get("/", getTickets);
-router.get("/:id", getTicket);
-router.get("/user/:id", getTicketsByUser);
-router.get("/tech/:id", getTicketsByTechnician);
-router.post("/", createTicket);
-router.patch("/:id", updateTicket);
+router.get("/", auth, getTickets);
+router.get("/:id", auth, getTicket);
+router.get("/user/:id", auth, getTicketsByUser);
+router.get("/tech/:id", auth, getTicketsByTechnician);
+router.post("/", auth, createTicket);
+router.patch("/:id", auth, updateTicket);
 
 export default router;
