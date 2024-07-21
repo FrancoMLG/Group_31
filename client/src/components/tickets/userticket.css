@@ -1,4 +1,4 @@
-.user-ticket * {
+/* .user-ticket * {
 	font-family: "Anaheim";
 	font-size: 15px;
 }
@@ -89,4 +89,15 @@ textarea::placeholder {
   font-size: 12px;
   margin-bottom: 0px;
 }
+ */
+
+ #dropdown {
+	width: 150px; 
+	height: 25px; 
+	margin-left: 10px;
+  }
+
+  .form-fieldset {
+	margin-bottom: 20px;
+  }
 
