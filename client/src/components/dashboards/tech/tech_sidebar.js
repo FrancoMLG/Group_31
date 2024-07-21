@@ -25,6 +25,9 @@ export default function TechSideBar({activeLinkId}) {
   };
 
   useEffect(() => {
+    if (!user) {
+      navigate("/");
+    }
     const token = user?.token;
     if (token) {
       const decodedToken = jwtDecode(token);

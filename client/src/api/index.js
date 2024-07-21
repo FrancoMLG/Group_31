@@ -23,3 +23,7 @@ export const updateTicket = async (id, updatedTicket) =>
 
 export const signIn = async (formData) => api.post("/users/signin", formData);
 export const signUp = async (formData) => api.post("/users/signup", formData);
+
+export const fetchUsers = async () => api.get("/users");
+export const updateUser = async (id, updatedUser) =>
+  api.patch(`/users/${id}`, updatedUser);
