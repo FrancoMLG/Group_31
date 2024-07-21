@@ -67,9 +67,9 @@ const MaintenanceRequestForm = () => {
         <h1 id="title">Submit a Maintenance Request</h1>
         <p id="description">Please fill out all fields.</p>
 
-        <fieldset>
+        <fieldset className="form-fieldset">
           <div>
-            <label htmlFor="dropdown">Type of issue:</label>
+            <label htmlFor="dropdown">Type of issue: </label>
             <select
               id="dropdown"
               name="category"
@@ -80,8 +80,8 @@ const MaintenanceRequestForm = () => {
               </option>
               <option value="Software">Software</option>
               <option value="Hardware">Hardware</option>
-              <option value="Other option">Other option</option>
-              <option value="idk">idk</option>
+              <option value="Repair request">Repair request</option>
+              <option value="Account help">Account help</option>
             </select>
             {formErrors.category && (
               <p className="error">{formErrors.category}</p>
@@ -89,7 +89,7 @@ const MaintenanceRequestForm = () => {
           </div>
         </fieldset>
 
-        <fieldset>
+        <fieldset className="form-fieldset">
           <div>
             <label htmlFor="msg">Description of issue:</label>
             <br />
