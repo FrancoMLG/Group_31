@@ -39,7 +39,8 @@ export default function UserAppointments() {
         <div className="col-auto">
           <UserSideBar activeLinkId={activeLinkId} />
         </div>
-        <div className="col overflow-auto">
+        <div className="col overflow-auto" style={{ paddingRight: "5%" }}>
+          <br />
           {tickets.length > 0 ? (
             <table className="table table-striped table-hover">
               <thead>

@@ -80,6 +80,7 @@ export default function AdminGrant() {
           <AdminSideBar activeLinkId={activeLinkId} />
         </div>
         <div className="col overflow-auto">
+          <br />
           <div className="container">
             <h1>Grant Privileges</h1>
             <div className="mb-3">
