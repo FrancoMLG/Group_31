@@ -14,9 +14,12 @@ export default function AdminGrant() {
   const [filter, setFilter] = useState("all");
 
   useEffect(() => {
+    const currentUser = JSON.parse(localStorage.getItem("profile"));
     fetchUsers()
       .then((response) => {
-        setUsers(response.data);
+        setUsers(
+          response.data.filter((user) => user._id !== currentUser.result._id)
+        );
         setFilteredUsers(response.data);
       })
       .catch((error) => {

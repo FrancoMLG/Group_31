@@ -25,7 +25,7 @@ export default function TechSideBar({activeLinkId}) {
   };
 
   useEffect(() => {
-    if (!user) {
+    if (!user || user.result.permissionLevel === "user") {
       navigate("/");
     }
     const token = user?.token;

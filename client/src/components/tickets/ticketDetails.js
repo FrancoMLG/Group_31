@@ -79,9 +79,6 @@ const TicketDetail = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error loading ticket: {error.message}</p>;
 
-  console.log(ticket);
-  console.log(user);
-
   return (
     <div className="container-fluid bg-body-tertiary vh-100 d-flex flex-column no-padding">
       <div className="row flex-grow-1">
@@ -134,19 +131,25 @@ const TicketDetail = () => {
                 </p>
                 <h3 className="mt-4">Messages:</h3>
                 <ul className="list-group mb-4">
-                  {ticket.messages.map((msg, index) => (
-                    <li key={index} className="list-group-item">
-                      <p>
-                        <strong>
-                          {`${msg.sender?.firstName} ${msg.sender?.lastName}`}:
-                        </strong>{" "}
-                        {msg.message}
-                      </p>
-                      <p className="text-muted">
-                        {new Date(msg.createdAt).toLocaleString()}
-                      </p>
-                    </li>
-                  ))}
+                  {ticket.messages
+                    .sort(
+                      (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+                    )
+                    .reverse()
+                    .map((msg, index) => (
+                      <li key={index} className="list-group-item">
+                        <p>
+                          <strong>
+                            {`${msg.sender?.firstName} ${msg.sender?.lastName}`}
+                            :
+                          </strong>{" "}
+                          {msg.message}
+                        </p>
+                        <p className="text-muted">
+                          {new Date(msg.createdAt).toLocaleString()}
+                        </p>
+                      </li>
+                    ))}
                 </ul>
                 <form onSubmit={handleMessageSubmit}>
                   <div className="mb-3">

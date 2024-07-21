@@ -25,7 +25,8 @@ export default function TechHome() {
     fetchData();
   }, []);
 
-  const unassignTicket = async (ticketId) => {
+  const unassignTicket = async (ticketId, event) => {
+    event.stopPropagation();
     try {
       const user = JSON.parse(localStorage.getItem("profile"));
       await updateTicket(ticketId, {
@@ -74,8 +75,8 @@ export default function TechHome() {
                     <td>{formatDate(ticket.createdAt)}</td>
                     <td>
                       <button
-                        className="btn btn-primary"
-                        onClick={() => unassignTicket(ticket._id)}>
+                        className="btn btn-danger"
+                        onClick={(event) => unassignTicket(ticket._id, event)}>
                         Unassign
                       </button>
                     </td>

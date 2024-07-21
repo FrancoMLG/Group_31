@@ -25,7 +25,7 @@ export default function AdminSideBar({activeLinkId}) {
   };
 
   useEffect(() => {
-    if (!user) {
+    if (!user || user.result.permissionLevel !== "admin") {
       navigate("/");
     }
     const token = user?.token;
@@ -115,7 +115,7 @@ export default function AdminSideBar({activeLinkId}) {
         </a>
         <ul className="dropdown-menu text-small shadow">
           <li>
-            <a className="dropdown-item" href="#" onClick={() => navigate("/")}>
+            <a className="dropdown-item" href="#" onClick={logout}>
               Sign out
             </a>
           </li>

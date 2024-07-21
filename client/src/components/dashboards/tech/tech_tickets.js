@@ -30,7 +30,8 @@ export default function TechTickets() {
     return `${month}/${day}/${year}`;
   };
 
-  const assignTicket = async (ticketId) => {
+  const assignTicket = async (ticketId, event) => {
+    event.stopPropagation();
     try {
       const user = JSON.parse(localStorage.getItem("profile"));
       await updateTicket(ticketId, {
@@ -74,7 +75,9 @@ export default function TechTickets() {
                         <td>
                           <button
                             className="btn btn-primary"
-                            onClick={() => assignTicket(ticket._id)}>
+                            onClick={(event) =>
+                              assignTicket(ticket._id, event)
+                            }>
                             Assign
                           </button>
                         </td>
