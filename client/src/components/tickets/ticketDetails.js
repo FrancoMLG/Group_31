@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 import {fetchTicket, updateTicket} from "../../api";
 import {useLocation, useParams} from "react-router-dom";
 import UserSideBar from "../dashboards/user/user_sidebar";
+import TechSideBar from "../dashboards/tech/tech_sidebar";
+import AdminSideBar from "../dashboards/admin/admin_sidebar";
 
 const TicketDetail = () => {
   const {id} = useParams();
@@ -50,7 +52,6 @@ const TicketDetail = () => {
 
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("profile")));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
   const unassignTicket = async (ticketId) => {
@@ -64,6 +65,7 @@ const TicketDetail = () => {
       console.error(error);
     }
   };
+
   const assignTicket = async (ticketId) => {
     setActionTrigger(!actionTrigger);
     try {
@@ -83,7 +85,9 @@ const TicketDetail = () => {
     <div className="container-fluid bg-body-tertiary vh-100 d-flex flex-column no-padding">
       <div className="row flex-grow-1">
         <div className="col-auto">
-          <UserSideBar />
+          {user?.result.permissionLevel === "user" && <UserSideBar />}
+          {user?.result.permissionLevel === "technician" && <TechSideBar />}
+          {user?.result.permissionLevel === "admin" && <AdminSideBar />}
         </div>
         <div className="col overflow-auto">
           <div className="p-3">

@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import { Link, useNavigate } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import React from "react";
 import TechSideBar from "./tech_sidebar";
 
@@ -14,12 +14,45 @@ export default function TechChat() {
           <TechSideBar activeLinkId={activeLinkId} />
         </div>
         <div className="col overflow-auto">
-		<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-			<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-		  <form class="chat-input-form">
-		  <input type="text" class="chat-input" required placeholder="Type here"/>
-		  <button type="submit" class="button send-button">Send</button>
-		  </form>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <form class="chat-input-form">
+            <input
+              type="text"
+              class="chat-input"
+              required
+              placeholder="Type here"
+            />
+            <button type="submit" class="button send-button">
+              Send
+            </button>
+          </form>
         </div>
       </div>
     </div>
