@@ -16,7 +16,9 @@ export default function UserSupport() {
         </div>
         <div className="col overflow-auto">
 
-          <p>Insert More Content Here!</p>
+          <h1 id="title">Contact Support</h1>
+		  <p classname="lead">If you want to get in touch with one of our technicians then you can submit a help ticket under "Schedule Appointment" and we will address your issue 
+		  a soon as possible. Furthermore, you can also get in touch right away without submitting a ticket through our live chat which is found under "Chat".</p>
 
         </div>
       </div>

@@ -1,0 +1,30 @@
+body{
+	.chat-input {
+  padding: 0.625em;
+  border: none;
+  border-radius: 0.5em;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 14pt;
+  width: 95%;
+  height: 50px;
+}}
+
+.send-button {
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.chatMessage{
+	background-color: #f0f0f0;
+	width: 50%;
+	font-size: 14pt;
+}
+
+.messages-container{
+	display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
