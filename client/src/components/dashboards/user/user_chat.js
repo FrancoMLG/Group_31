@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
 import UserSideBar from "./user_sidebar";
 import "./user_chat.css";
+import DashHeader from "../dash_header";
 
 export default function UserChat() {
   const activeLinkId = "chat-link";
@@ -24,8 +25,9 @@ export default function UserChat() {
           <UserSideBar activeLinkId={activeLinkId} />
         </div>
         <div className="col overflow-auto">
+            <DashHeader headerText={"Chat"} />
 			<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-			<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+			<br></br><br></br><br></br><br></br>
 			<div className="messages-container">
             {messages.map((msg, index) => (
               <div key={index} className="chatMessage blue-bg-body-tertiary">

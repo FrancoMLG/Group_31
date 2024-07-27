@@ -5,6 +5,7 @@ import React, {useEffect, useRef, useState} from "react";
 import UserSideBar from "./user_sidebar";
 import "./user_appts.css";
 import {fetchTicketsByUser} from "../../../api";
+import DashHeader from "../dash_header";
 
 export default function UserAppointments() {
   const activeLinkId = "appointments-link";
@@ -40,6 +41,7 @@ export default function UserAppointments() {
           <UserSideBar activeLinkId={activeLinkId} />
         </div>
         <div className="col overflow-auto" style={{ paddingRight: "5%" }}>
+          <DashHeader headerText={"Appointments"} />
           <br />
           {tickets.length > 0 ? (
             <table className="table table-striped table-hover">

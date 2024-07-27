@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import TechSideBar from "./tech_sidebar";
 import "./tech_home.css";
 import { fetchTicketsByTechnician, updateTicket } from "../../../api";
+import DashHeader from "../dash_header";
 
 export default function TechHome() {
 	const activeLinkId = "home-link";
@@ -55,6 +56,7 @@ export default function TechHome() {
 					<TechSideBar activeLinkId={activeLinkId} />
 				</div>
 				<div className="col overflow-auto" style={{ paddingRight: "10%" }}>
+					<DashHeader headerText={"Home"} />
 					<div className="TechIntro">
 						<br />
 						<p>

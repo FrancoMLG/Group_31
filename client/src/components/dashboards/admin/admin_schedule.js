@@ -3,6 +3,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import AdminSideBar from "./admin_sidebar";
+import DashHeader from "../dash_header";
 
 export default function AdminSchedule() {
   const activeLinkId = "schedule-link";
@@ -14,6 +15,7 @@ export default function AdminSchedule() {
           <AdminSideBar activeLinkId={activeLinkId} />
         </div>
         <div className="col overflow-auto">
+          <DashHeader headerText={"Schedule"} />
 
           <p>Insert More Content Here!</p>
 

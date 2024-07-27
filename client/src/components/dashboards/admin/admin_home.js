@@ -3,6 +3,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import AdminSideBar from "./admin_sidebar";
+import DashHeader from "../dash_header";
 
 export default function AdminHome() {
 	const activeLinkId = "home-link";
@@ -14,6 +15,7 @@ export default function AdminHome() {
 					<AdminSideBar activeLinkId={activeLinkId} />
 				</div>
 				<div className="col overflow-auto">
+					<DashHeader headerText={"Home"} />
 					<br />
 					<p>
 						Welcome to your Admin dashboard! Use the sidebar to navigate to the

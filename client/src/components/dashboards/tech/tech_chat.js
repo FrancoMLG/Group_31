@@ -3,6 +3,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { Link, useNavigate } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
 import TechSideBar from "./tech_sidebar";
+import DashHeader from "../dash_header";
 
 export default function TechChat() {
   const activeLinkId = "chat-link";
@@ -23,8 +24,9 @@ export default function TechChat() {
           <TechSideBar activeLinkId={activeLinkId} />
         </div>
         <div className="col overflow-auto">
+            <DashHeader headerText={"Chat"} />
 		<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-			<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+			<br></br><br></br><br></br><br></br>
 			<div className="messages-container">
             {messages.map((msg, index) => (
               <div key={index} className="chatMessage blue-bg-body-tertiary">
