@@ -17,10 +17,9 @@ export default function Calendar() {
         const data = await fetchTicketsByTechnician(user.result._id);
         const events = data.data.map(ticket => ({
           id: createEventId(),
-          title: ticket.category,
+          title: `${ticket.creator.firstName} ${ticket.creator.lastName}`, 
           start: ticket.startTime,
           end: ticket.endTime,
-          submitter: ticket.creator,
           allDay: false
         }));
         setAssignedTasks(events);
@@ -84,7 +83,6 @@ function renderEventContent(eventInfo) {
     <>
       <b>{eventInfo.timeText}</b>&nbsp;&nbsp;
       <i>{eventInfo.event.title}</i>
-      {/* <span>{eventInfo.event.extendedProps.submitter}</span> */}
     </>
   )
 }
