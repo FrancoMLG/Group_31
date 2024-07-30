@@ -1,20 +1,19 @@
-import React, { useState, useEffect } from 'react'
-import FullCalendar from '@fullcalendar/react'
-import dayGridPlugin from '@fullcalendar/daygrid'
-import timeGridPlugin from '@fullcalendar/timegrid'
-import interactionPlugin from '@fullcalendar/interaction'
-import { createEventId } from './event-utils'
-import { fetchTicketsByTechnician } from '../../api'
+import React, { useState, useEffect } from 'react';
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction';
+import { createEventId } from './event-utils';
+import { fetchTicketsByTechnician } from '../../../api';
 
-export default function Calendar() {
-  const [assignedTasks, setAssignedTasks] = useState([])
+export default function Calendar({ technicianId }) {
+  const [assignedTasks, setAssignedTasks] = useState([]);
 
   useEffect(() => {
     const fetchTickets = async () => {
       try {
-        const user = JSON.parse(localStorage.getItem("profile"));
-        if (!user) return;
-        const data = await fetchTicketsByTechnician(user.result._id);
+        if (!technicianId) return;
+        const data = await fetchTicketsByTechnician(technicianId);
         const events = data.data.map(ticket => ({
           id: createEventId(),
           title: ticket.category,
@@ -29,13 +28,13 @@ export default function Calendar() {
       }
     };
     fetchTickets();
-  }, []); 
+  }, [technicianId]);
 
   function handleDateSelect(selectInfo) {
-    let title = prompt('title for event')
-    let calendarApi = selectInfo.view.calendar
+    let title = prompt('title for event');
+    let calendarApi = selectInfo.view.calendar;
 
-    calendarApi.unselect() // clear date selection
+    calendarApi.unselect(); // clear date selection
 
     if (title) {
       calendarApi.addEvent({
@@ -44,13 +43,13 @@ export default function Calendar() {
         start: selectInfo.startStr,
         end: selectInfo.endStr,
         allDay: selectInfo.allDay
-      })
+      });
     }
   }
 
   function handleEventClick(clickInfo) {
     if (window.confirm(`delete? '${clickInfo.event.title}'`)) {
-      clickInfo.event.remove()
+      clickInfo.event.remove();
     }
   }
 
@@ -76,7 +75,7 @@ export default function Calendar() {
         />
       </div>
     </div>
-  )
+  );
 }
 
 function renderEventContent(eventInfo) {
@@ -86,5 +85,5 @@ function renderEventContent(eventInfo) {
       <i>{eventInfo.event.title}</i>
       {/* <span>{eventInfo.event.extendedProps.submitter}</span> */}
     </>
-  )
+  );
 }

@@ -3,6 +3,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import TechSideBar from "./tech_sidebar";
+import DashHeader from "../dash_header";
 
 export default function TechMessages() {
   const activeLinkId = "messages-link";
@@ -14,6 +15,7 @@ export default function TechMessages() {
           <TechSideBar activeLinkId={activeLinkId} />
         </div>
         <div className="col overflow-auto">
+          <DashHeader headerText={"Ticket Messages"} />
 
           <p>Insert More Content Here!</p>
 

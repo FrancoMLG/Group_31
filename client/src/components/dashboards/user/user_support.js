@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import React, { useEffect, useRef } from "react";
 import UserSideBar from "./user_sidebar";
 import "./user_support.css";
+import DashHeader from "../dash_header";
 
 export default function UserSupport() {
   const activeLinkId = "support-link";
@@ -16,7 +17,9 @@ export default function UserSupport() {
         </div>
         <div className="col overflow-auto">
 
-          <p>Insert More Content Here!</p>
+          <DashHeader headerText={"Contact Support"} />
+		  <p classname="lead">If you want to get in touch with one of our technicians then you can submit a help ticket under "Schedule Appointment" and we will address your issue 
+		  a soon as possible. Furthermore, you can also get in touch right away without submitting a ticket through our live chat which is found under "Chat".</p>
 
         </div>
       </div>

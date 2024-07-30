@@ -5,6 +5,7 @@ import React, {useEffect, useRef} from "react";
 import UserSideBar from "./user_sidebar";
 import "./user_sched.css";
 import MaintenanceRequestForm from "../../tickets/userticket";
+import DashHeader from "../dash_header";
 
 export default function UserSchedule() {
   const activeLinkId = "schedule-link";
@@ -16,7 +17,8 @@ export default function UserSchedule() {
           <UserSideBar activeLinkId={activeLinkId} />
         </div>
         <div className="col overflow-auto">
-          {/* <p>Insert More Content Here!</p> */}
+          <DashHeader headerText={"Schedule Appointment"} />
+          <br />
           <MaintenanceRequestForm />
         </div>
       </div>

@@ -4,6 +4,7 @@ import {Link, useNavigate} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import TechSideBar from "./tech_sidebar";
 import {fetchTickets, updateTicket} from "../../../api";
+import DashHeader from "../dash_header";
 
 export default function TechTickets() {
   const activeLinkId = "tickets-link";
@@ -52,6 +53,7 @@ export default function TechTickets() {
           <TechSideBar activeLinkId={activeLinkId} />
         </div>
         <div className="col overflow-auto">
+          <DashHeader headerText={"Active Tickets"} />
           {tickets.filter((ticket) => ticket.status === "Open").length > 0 ? (
             <table className="table table-striped table-hover">
               <thead>

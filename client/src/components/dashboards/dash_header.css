@@ -1,0 +1,9 @@
+.my-navbar-brand {
+  font-size: 2rem; /* Larger text */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center the text */
+}
+
+.my-navbar-hr {
+  width: 100%;
+}

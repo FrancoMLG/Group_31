@@ -4,6 +4,7 @@ import {Link, useNavigate} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import AdminSideBar from "./admin_sidebar";
 import {fetchUsers, updateUser} from "../../../api";
+import DashHeader from "../dash_header";
 
 export default function AdminGrant() {
   const activeLinkId = "grant-link";
@@ -79,6 +80,8 @@ export default function AdminGrant() {
           <AdminSideBar activeLinkId={activeLinkId} />
         </div>
         <div className="col overflow-auto">
+          <DashHeader headerText={"Grant Privileges"} />
+          <br />
           <div className="container">
             <h1>Grant Privileges</h1>
             <div className="mb-3">
