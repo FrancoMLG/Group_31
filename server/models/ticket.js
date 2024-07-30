@@ -8,6 +8,8 @@ const ticketSchema = mongoose.Schema({
   status: {type: String, required: true},
   category: {type: String, required: true},
   createdAt: {type: Date, default: new Date()},
+  startTime: {type: Date, default: null},
+  endTime: {type: Date, default: null},
   messages: [
     {
       sender: {type: mongoose.Schema.Types.ObjectId, ref: User, required: true},

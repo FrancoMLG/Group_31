@@ -1,13 +1,35 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { createEventId } from './event-utils'
+import { fetchTicketsByTechnician } from '../../api'
 
 export default function Calendar() {
   const [assignedTasks, setAssignedTasks] = useState([])
 
+  useEffect(() => {
+    const fetchTickets = async () => {
+      try {
+        const user = JSON.parse(localStorage.getItem("profile"));
+        if (!user) return;
+        const data = await fetchTicketsByTechnician(user.result._id);
+        const events = data.data.map(ticket => ({
+          id: createEventId(),
+          title: ticket.category,
+          start: ticket.startTime,
+          end: ticket.endTime,
+          submitter: ticket.creator,
+          allDay: false
+        }));
+        setAssignedTasks(events);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchTickets();
+  }, []); // Ensure this useEffect runs only once
 
   function handleDateSelect(selectInfo) {
     let title = prompt('title for event')
@@ -32,13 +54,8 @@ export default function Calendar() {
     }
   }
 
-  function handleEvents(events) {
-    setAssignedTasks(events)
-  }
-
   return (
     <div className='calendar'>
-
       <div className='calendar-main'>
         <FullCalendar
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
@@ -55,12 +72,7 @@ export default function Calendar() {
           select={handleDateSelect}
           eventContent={renderEventContent} // custom render function
           eventClick={handleEventClick}
-          eventsSet={handleEvents} // called after events are initialized/added/changed/removed
-          /* you can update a remote database when these fire:
-          eventAdd={function(){}}
-          eventChange={function(){}}
-          eventRemove={function(){}}
-          */
+          events={assignedTasks} // set the events here
         />
       </div>
     </div>
@@ -70,8 +82,9 @@ export default function Calendar() {
 function renderEventContent(eventInfo) {
   return (
     <>
-      <b>{eventInfo.timeText}</b>
+      <b>{eventInfo.timeText}</b>&nbsp;&nbsp;
       <i>{eventInfo.event.title}</i>
+      {/* <span>{eventInfo.event.extendedProps.submitter}</span> */}
     </>
   )
 }
