@@ -8,6 +8,7 @@ const ticketSchema = mongoose.Schema({
   status: {type: String, required: true},
   category: {type: String, required: true},
   createdAt: {type: Date, default: new Date()},
+  timeEstimate: {type: Number, required: true},
   messages: [
     {
       sender: {type: mongoose.Schema.Types.ObjectId, ref: User, required: true},

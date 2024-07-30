@@ -54,6 +54,7 @@ export const createTicket = async (req, res) => {
       ...ticket,
       technician: null,
       createdAt: new Date().toISOString(),
+      timeEstimate: null,
       messages: [],
     });
     console.log(result);

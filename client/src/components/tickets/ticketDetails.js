@@ -94,14 +94,15 @@ const TicketDetail = () => {
             <div className="d-flex justify-content-between align-items-center mb-4">
               <h1>Ticket Details</h1>
 
-              {user?.result.permissionLevel === "technician" &&
-                ticket.technician?._id === user?.result._id && (
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => unassignTicket(ticket._id)}>
-                    Unassign
-                  </button>
-                )}
+              {((user?.result.permissionLevel === "technician" &&
+                ticket.technician?._id === user?.result._id) ||
+                user?.result.permissionLevel === "admin") && (
+                <button
+                  className="btn btn-danger"
+                  onClick={() => unassignTicket(ticket._id)}>
+                  Unassign
+                </button>
+              )}
 
               {user?.result.permissionLevel === "technician" &&
                 !ticket.technician?._id && (
