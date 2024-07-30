@@ -96,7 +96,8 @@ const TicketDetail = () => {
 
               {((user?.result.permissionLevel === "technician" &&
                 ticket.technician?._id === user?.result._id) ||
-                user?.result.permissionLevel === "admin") && (
+                (user?.result.permissionLevel === "admin" &&
+                  ticket.status === "open")) && (
                 <button
                   className="btn btn-danger"
                   onClick={() => unassignTicket(ticket._id)}>
@@ -184,7 +185,6 @@ const TicketDetail = () => {
 
 export default TicketDetail;
 
-
 // import React, {useEffect, useState} from "react";
 // import {fetchTicket, updateTicket} from "../../api";
 // import {useLocation, useParams} from "react-router-dom";
@@ -261,7 +261,7 @@ export default TicketDetail;
 //         status: "Assigned",
 //         technician: user?.result._id,
 //         startTime: new Date().toISOString(),
-//         endTime: new Date(new Date().getTime() + 60 * 60 * 1000).toISOString(), 
+//         endTime: new Date(new Date().getTime() + 60 * 60 * 1000).toISOString(),
 //       });
 //     } catch (error) {
 //       console.error(error);
