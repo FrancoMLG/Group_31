@@ -56,17 +56,10 @@ export default function TechChat() {
             ))}
             <div ref={messagesEndRef} />
           </div>
-          <form class="chat-input-form">
-            <input
-              type="text"
-              class="chat-input"
-              required
-              placeholder="Type here"
-            />
-            <button type="submit" class="button send-button">
-              Send
-            </button>
-          </form>
+          <form id="chatForm" class="chat-input-form" onSubmit={handleSubmit}>
+		  <input type="text" class="chat-input" value={message} onChange={(e) => setMessage(e.target.value)} required placeholder="Type here"/> 
+		  <button type="submit" class="button send-button">Send</button>
+		  </form>
         </div>
       </div>
     </div>
