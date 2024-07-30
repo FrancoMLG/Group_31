@@ -40,7 +40,7 @@ export default function UserAppointments() {
         <div className="col-auto">
           <UserSideBar activeLinkId={activeLinkId} />
         </div>
-        <div className="col overflow-auto" style={{ paddingRight: "5%" }}>
+        <div className="col overflow-auto" style={{paddingRight: "5%"}}>
           <DashHeader headerText={"Appointments"} />
           <br />
           {tickets.length > 0 ? (
@@ -63,7 +63,8 @@ export default function UserAppointments() {
                     <td>
                       {ticket.status === "Open"
                         ? "Open"
-                        : ticket.technician.firstName +
+                        : "Assigned: " +
+                          ticket.technician.firstName +
                           " " +
                           ticket.technician.lastName}
                     </td>

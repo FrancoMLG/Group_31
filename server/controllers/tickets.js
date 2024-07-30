@@ -40,7 +40,9 @@ export const getTicketsByUser = async (req, res) => {
 
 export const getTicketsByTechnician = async (req, res) => {
   try {
-    const tickets = await Ticket.find({technician: req.params.id});
+    const tickets = await Ticket.find({technician: req.params.id}).populate(
+      "creator"
+    );
     res.status(200).json(tickets);
   } catch (error) {
     res.status(404).json({message: error.message});
