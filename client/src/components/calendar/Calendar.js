@@ -5,6 +5,7 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { createEventId } from './event-utils'
 import { fetchTicketsByTechnician } from '../../api'
+import './Calendar.css'
 
 export default function Calendar() {
   const [assignedTasks, setAssignedTasks] = useState([])
@@ -28,13 +29,13 @@ export default function Calendar() {
       }
     };
     fetchTickets();
-  }, []); 
+  }, []);
 
   function handleDateSelect(selectInfo) {
-    let title = prompt('title for event')
-    let calendarApi = selectInfo.view.calendar
+    let title = prompt('title for event');
+    let calendarApi = selectInfo.view.calendar;
 
-    calendarApi.unselect() // clear date selection
+    calendarApi.unselect(); 
 
     if (title) {
       calendarApi.addEvent({
@@ -43,46 +44,24 @@ export default function Calendar() {
         start: selectInfo.startStr,
         end: selectInfo.endStr,
         allDay: selectInfo.allDay
-      })
-    }
-  }
-
-  function handleEventClick(clickInfo) {
-    if (window.confirm(`delete? '${clickInfo.event.title}'`)) {
-      clickInfo.event.remove()
+      });
     }
   }
 
   return (
-    <div className='calendar'>
-      <div className='calendar-main'>
-        <FullCalendar
-          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-          headerToolbar={{
-            left: 'prev,next today',
-            center: 'title',
-            right: 'dayGridMonth,timeGridWeek,timeGridDay'
-          }}
-          initialView='dayGridMonth'
-          editable={true}
-          selectable={true}
-          selectMirror={true}
-          dayMaxEvents={true}
-          select={handleDateSelect}
-          eventContent={renderEventContent} // custom render function
-          eventClick={handleEventClick}
-          events={assignedTasks} // set the events here
-        />
-      </div>
-    </div>
-  )
-}
-
-function renderEventContent(eventInfo) {
-  return (
-    <>
-      <b>{eventInfo.timeText}</b>&nbsp;&nbsp;
-      <i>{eventInfo.event.title}</i>
-    </>
-  )
+    <FullCalendar
+      plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+      initialView="dayGridMonth"
+      headerToolbar={{
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+      }}
+      events={assignedTasks}
+      editable={false} // Disable editing
+      eventClick={() => {}} // Disable event clicking
+      selectable={true}
+      select={handleDateSelect}
+    />
+  );
 }

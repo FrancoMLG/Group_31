@@ -4,7 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { createEventId } from './event-utils';
-import { fetchTicketsByTechnician } from '../../../api';
+import { fetchTicketsByTechnician, updateTicket } from '../../../api';
 
 export default function Calendar({ technicianId }) {
   const [assignedTasks, setAssignedTasks] = useState([]);
@@ -15,11 +15,10 @@ export default function Calendar({ technicianId }) {
         if (!technicianId) return;
         const data = await fetchTicketsByTechnician(technicianId);
         const events = data.data.map(ticket => ({
-          id: createEventId(),
-          title: ticket.category,
+          id: ticket._id, // Use the ticket ID for updating
+          title: `${ticket.creator.firstName} ${ticket.creator.lastName}`, 
           start: ticket.startTime,
           end: ticket.endTime,
-          submitter: ticket.creator,
           allDay: false
         }));
         setAssignedTasks(events);
@@ -30,11 +29,37 @@ export default function Calendar({ technicianId }) {
     fetchTickets();
   }, [technicianId]);
 
+  const handleEventResize = async (resizeInfo) => {
+    const { event } = resizeInfo;
+    try {
+      await updateTicket(event.id, {
+        startTime: event.start.toISOString(),
+        endTime: event.end.toISOString()
+      });
+      alert('Event updated successfully');
+    } catch (error) {
+      console.error('Error updating event:', error);
+    }
+  };
+
+  const handleEventDrop = async (dropInfo) => {
+    const { event } = dropInfo;
+    try {
+      await updateTicket(event.id, {
+        startTime: event.start.toISOString(),
+        endTime: event.end.toISOString()
+      });
+      alert('Event updated successfully');
+    } catch (error) {
+      console.error('Error updating event:', error);
+    }
+  };
+
   function handleDateSelect(selectInfo) {
     let title = prompt('title for event');
     let calendarApi = selectInfo.view.calendar;
 
-    calendarApi.unselect(); // clear date selection
+    calendarApi.unselect(); 
 
     if (title) {
       calendarApi.addEvent({
@@ -69,9 +94,11 @@ export default function Calendar({ technicianId }) {
           selectMirror={true}
           dayMaxEvents={true}
           select={handleDateSelect}
-          eventContent={renderEventContent} // custom render function
+          eventContent={renderEventContent} 
           eventClick={handleEventClick}
-          events={assignedTasks} // set the events here
+          events={assignedTasks}
+          eventResize={handleEventResize} 
+          eventDrop={handleEventDrop} 
         />
       </div>
     </div>
@@ -83,7 +110,6 @@ function renderEventContent(eventInfo) {
     <>
       <b>{eventInfo.timeText}</b>&nbsp;&nbsp;
       <i>{eventInfo.event.title}</i>
-      {/* <span>{eventInfo.event.extendedProps.submitter}</span> */}
     </>
   );
 }

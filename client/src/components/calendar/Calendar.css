@@ -1,0 +1,8 @@
+.fc-event, .fc-event-title {
+    overflow: visible !important;
+    z-index: 1;
+  }
+  
+  .fc-event-main {
+    overflow: visible !important;
+  }
