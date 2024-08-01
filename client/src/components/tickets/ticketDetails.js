@@ -78,6 +78,17 @@ const TicketDetail = () => {
     }
   };
 
+  const markComplete = async (ticketId) => {
+    setActionTrigger(!actionTrigger);
+    try {
+      await updateTicket(ticketId, {
+        status: "Closed",
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error loading ticket: {error.message}</p>;
 
@@ -111,6 +122,16 @@ const TicketDetail = () => {
                     className="btn btn-primary"
                     onClick={() => assignTicket(ticket._id)}>
                     Assign
+                  </button>
+                )}
+
+              {user?.result.permissionLevel !== "user" &&
+                ticket.technician?._id === user?.result._id &&
+                ticket.status === "Assigned" && (
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => markComplete(ticket._id)}>
+                    Mark Complete
                   </button>
                 )}
             </div>
