@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {fetchTicket, updateTicket} from "../../api";
+import {fetchTicket, updateTicket, updateUser} from "../../api";
 import {useLocation, useParams} from "react-router-dom";
 import UserSideBar from "../dashboards/user/user_sidebar";
 import TechSideBar from "../dashboards/tech/tech_sidebar";
@@ -84,6 +84,12 @@ const TicketDetail = () => {
       await updateTicket(ticketId, {
         status: "Closed",
       });
+      const totalHours =
+        Math.abs(new Date(ticket.endTime) - new Date(ticket.startTime)) / 36e5;
+      const currentHours = user?.result.hoursWorked || 0;
+      await updateUser(user?.result._id, {
+        hoursWorked: currentHours + totalHours,
+      });
     } catch (error) {
       console.error(error);
     }
@@ -108,13 +114,14 @@ const TicketDetail = () => {
               {((user?.result.permissionLevel !== "user" &&
                 ticket.technician?._id === user?.result._id) ||
                 (user?.result.permissionLevel === "admin" &&
-                  ticket.status === "open")) && (
-                <button
-                  className="btn btn-danger"
-                  onClick={() => unassignTicket(ticket._id)}>
-                  Unassign
-                </button>
-              )}
+                  ticket.status === "open")) &&
+                ticket.status !== "Closed" && (
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => unassignTicket(ticket._id)}>
+                    Unassign
+                  </button>
+                )}
 
               {user?.result.permissionLevel !== "user" &&
                 !ticket.technician?._id && (

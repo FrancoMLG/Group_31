@@ -8,5 +8,6 @@ router.post("/signup", signup);
 
 router.get("/", getUsers);
 router.patch("/:id", updateUser);
+router.patch("/:id/loghours", updateUser);
 
 export default router;

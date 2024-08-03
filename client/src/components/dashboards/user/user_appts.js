@@ -63,6 +63,8 @@ export default function UserAppointments() {
                     <td>
                       {ticket.status === "Open"
                         ? "Open"
+                        : ticket.status === "Closed"
+                        ? "Closed"
                         : "Assigned: " +
                           ticket.technician.firstName +
                           " " +

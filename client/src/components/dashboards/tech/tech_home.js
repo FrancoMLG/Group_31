@@ -127,51 +127,44 @@ export default function TechHome() {
                 </tr>
               </thead>
               <tbody>
-                {tickets.map(
-                  (ticket) =>
-                    ticket.status !== "Closed" && (
-                      <tr
-                        key={ticket._id}
-                        onClick={() => navigate(`/ticket/${ticket._id}`)}>
-                        <td>{ticket.category}</td>
-                        <td>{formatDate(ticket.createdAt)}</td>
-                        <td>
-                          <button
-                            className="btn btn-danger"
-                            onClick={(event) =>
-                              unassignTicket(ticket._id, event)
-                            }>
-                            Unassign
-                          </button>
-                        </td>
-                        <td>
-                          <select
-                            className="form-select fixed-size-dropdown"
-                            onClick={(event) => event.stopPropagation()}
-                            onChange={(event) =>
-                              handleTimeChange(
-                                ticket._id,
-                                event.target.value,
-                                event
-                              )
-                            }>
-                            <option value="">Select time</option>
-                            <option value="30">30 minutes</option>
-                            <option value="45">45 minutes</option>
-                            <option value="60">60 minutes</option>
-                          </select>
-                        </td>
-                        <td>
-                          {ticket.startTime
-                            ? formatDate(ticket.startTime)
-                            : "N/A"}
-                        </td>
-                        <td>
-                          {ticket.endTime ? formatDate(ticket.endTime) : "N/A"}
-                        </td>
-                      </tr>
-                    )
-                )}
+                {tickets.map((ticket) => (
+                  <tr
+                    key={ticket._id}
+                    onClick={() => navigate(`/ticket/${ticket._id}`)}>
+                    <td>{ticket.category}</td>
+                    <td>{formatDate(ticket.createdAt)}</td>
+                    <td>
+                      <button
+                        className="btn btn-danger"
+                        onClick={(event) => unassignTicket(ticket._id, event)}>
+                        Unassign
+                      </button>
+                    </td>
+                    <td>
+                      <select
+                        className="form-select fixed-size-dropdown"
+                        onClick={(event) => event.stopPropagation()}
+                        onChange={(event) =>
+                          handleTimeChange(
+                            ticket._id,
+                            event.target.value,
+                            event
+                          )
+                        }>
+                        <option value="">Select time</option>
+                        <option value="30">30 minutes</option>
+                        <option value="45">45 minutes</option>
+                        <option value="60">60 minutes</option>
+                      </select>
+                    </td>
+                    <td>
+                      {ticket.startTime ? formatDate(ticket.startTime) : "N/A"}
+                    </td>
+                    <td>
+                      {ticket.endTime ? formatDate(ticket.endTime) : "N/A"}
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           ) : (

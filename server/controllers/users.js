@@ -84,3 +84,18 @@ export const updateUser = async (req, res) => {
   );
   res.json(updatedUser);
 };
+
+export const logHours = async (req, res) => {
+  const {id: _id} = req.params;
+  const user = req.body;
+
+  if (!mongoose.Types.ObjectId.isValid(_id))
+    return res.status(404).send("No user with that id");
+
+  const updatedUser = await User.findByIdAndUpdate(
+    _id,
+    {...user, _id},
+    {new: true}
+  );
+  res.json(updatedUser);
+};

@@ -27,3 +27,5 @@ export const signUp = async (formData) => api.post("/users/signup", formData);
 export const fetchUsers = async () => api.get("/users");
 export const updateUser = async (id, updatedUser) =>
   api.patch(`/users/${id}`, updatedUser);
+export const logHours = async (id, updatedUser) =>
+  api.patch(`/users/${id}/loghours`, updatedUser);

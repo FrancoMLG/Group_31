@@ -6,6 +6,7 @@ const userSchema = mongoose.Schema({
   permissionLevel: {type: String, required: true},
   email: {type: String, required: true},
   password: {type: String, required: true},
+  hoursWorked: {type: Number, default: 0},
 });
 
 export default mongoose.model("User", userSchema);

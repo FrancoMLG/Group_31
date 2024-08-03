@@ -1,11 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import { Link, useNavigate } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import {Link, useNavigate} from "react-router-dom";
+import React, {useState, useEffect} from "react";
 import AdminSideBar from "./admin_sidebar";
 import DashHeader from "../dash_header";
 import Calendar from "./calendar";
-import { fetchUsers } from "../../../api"; 
+import {fetchUsers} from "../../../api";
 
 export default function AdminSchedule() {
   const activeLinkId = "schedule-link";
@@ -15,7 +15,9 @@ export default function AdminSchedule() {
   useEffect(() => {
     fetchUsers()
       .then((response) => {
-        const techs = response.data.filter(user => user.permissionLevel === "technician");
+        const techs = response.data.filter(
+          (user) => user.permissionLevel === "technician"
+        );
         setTechnicians(techs);
       })
       .catch((error) => {
@@ -25,6 +27,10 @@ export default function AdminSchedule() {
 
   const handleTechnicianChange = (event) => {
     setSelectedTechnician(event.target.value);
+  };
+
+  const getTechnicianById = (id) => {
+    return technicians.find((tech) => tech._id === id);
   };
 
   return (
@@ -40,20 +46,29 @@ export default function AdminSchedule() {
             <select
               value={selectedTechnician || ""}
               onChange={handleTechnicianChange}
-              className="form-select"
-            >
-              <option value="" disabled>Select a Technician</option>
+              className="form-select">
+              <option value="" disabled>
+                Select a Technician
+              </option>
               {technicians.map((tech) => (
                 <option key={tech._id} value={tech._id}>
+                  {console.log(tech)}
                   {tech.firstName} {tech.lastName}
                 </option>
               ))}
             </select>
+            {selectedTechnician && (
+              <h5>
+                {`${getTechnicianById(selectedTechnician).firstName} ${
+                  getTechnicianById(selectedTechnician).lastName
+                } hours worked: ${
+                  getTechnicianById(selectedTechnician).hoursWorked
+                }`}{" "}
+              </h5>
+            )}
           </div>
 
-          {selectedTechnician && (
-            <Calendar technicianId={selectedTechnician} />
-          )}
+          {selectedTechnician && <Calendar technicianId={selectedTechnician} />}
         </div>
       </div>
     </div>
