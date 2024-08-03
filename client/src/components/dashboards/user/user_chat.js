@@ -5,15 +5,18 @@ import React, { useEffect, useRef, useState } from "react";
 import UserSideBar from "./user_sidebar";
 import "./user_chat.css";
 import DashHeader from "../dash_header";
+import { useChat } from '../ChatContext'; 
 
 export default function UserChat() {
   const activeLinkId = "chat-link";
+  const { messages, addMessage } = useChat();
   const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState([]);
+  //const [messages, setMessages] = useState([]);
   const messagesEndRef = useRef(null);
   const handleSubmit = (event) => {
     event.preventDefault();
-	setMessages([...messages, { text: message }]);
+	//setMessages([...messages, { text: message }]);
+    addMessage({ text: message });
     setMessage("");
 	messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   };

@@ -4,15 +4,18 @@ import {Link, useNavigate} from "react-router-dom";
 import React, {useEffect, useRef, useState} from "react";
 import TechSideBar from "./tech_sidebar";
 import DashHeader from "../dash_header";
+import { useChat } from '../ChatContext';
 
 export default function TechChat() {
   const activeLinkId = "chat-link";
+  const { messages, addMessage } = useChat();
   const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState([]);
+  //const [messages, setMessages] = useState([]);
   const messagesEndRef = useRef(null);
   const handleSubmit = (event) => {
     event.preventDefault();
-    setMessages([...messages, {text: message}]);
+    //setMessages([...messages, {text: message}]);
+	addMessage({ text: message });
     setMessage("");
     messagesEndRef.current.scrollIntoView({behavior: "smooth"});
   };
@@ -25,29 +28,8 @@ export default function TechChat() {
         </div>
         <div className="col overflow-auto">
           <DashHeader headerText={"Chat"} />
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
+          <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+			<br></br><br></br><br></br><br></br>
           <div className="messages-container">
             {messages.map((msg, index) => (
               <div key={index} className="chatMessage blue-bg-body-tertiary">
