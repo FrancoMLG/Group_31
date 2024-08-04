@@ -11,12 +11,10 @@ export default function UserChat() {
   const activeLinkId = "chat-link";
   const { messages, addMessage } = useChat();
   const [message, setMessage] = useState("");
-  //const [messages, setMessages] = useState([]);
   const messagesEndRef = useRef(null);
   const handleSubmit = (event) => {
     event.preventDefault();
-	//setMessages([...messages, { text: message }]);
-    addMessage({ text: message });
+    addMessage({ text: message, type: 'user' });
     setMessage("");
 	messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   };
@@ -33,7 +31,7 @@ export default function UserChat() {
 			<br></br><br></br><br></br><br></br>
 			<div className="messages-container">
             {messages.map((msg, index) => (
-              <div key={index} className="chatMessage blue-bg-body-tertiary">
+              <div key={index} className={`chatMessage ${msg.type === 'tech' ? 'techMessage' : 'userMessage'}`}>
                 <div className="message-text">{msg.text}</div>
               </div>
             ))}
