@@ -1,5 +1,4 @@
-body{
-	.chat-input {
+.chat-input {
   padding: 0.625em;
   border: none;
   border-radius: 0.5em;
@@ -8,7 +7,7 @@ body{
   font-size: 14pt;
   width: 95%;
   height: 50px;
-}}
+}
 
 .send-button {
   background-color: #f0f0f0;
@@ -17,14 +16,28 @@ body{
   font-weight: bold;
 }
 
-.chatMessage{
-	background-color: #f0f0f0;
-	width: 50%;
-	font-size: 14pt;
+.techMessage {
+  background-color: #f0f0f0;
+  color: #333;
+  width: 50%;
+  font-size: 14pt;
+  border-radius: 0.5em;
+  padding: 0.625em;
+  margin: 0.5em 0;
 }
 
-.messages-container{
-	display: flex;
+.userMessage {
+  background-color: #007bff;
+  color: #333;
+  width: 50%;
+  font-size: 14pt;
+  border-radius: 0.5em;
+  padding: 0.625em;
+  margin: 0.5em 0;
+}
+
+.messages-container {
+  display: flex;
   flex-direction: column;
   align-items: flex-end;
 }

@@ -11,7 +11,7 @@ root.render(
   <React.StrictMode>
   <ChatProvider>
     <App />
-	</ChatProvider>
+  </ChatProvider>
   </React.StrictMode>
 );
 
