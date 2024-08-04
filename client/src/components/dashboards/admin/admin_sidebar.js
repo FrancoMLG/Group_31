@@ -72,6 +72,21 @@ export default function AdminSideBar({activeLinkId}) {
         <li>
           <a
             href="#"
+            id="tickets-link"
+            className="nav-link link-body-emphasis"
+            onClick={() => navigate("/admintickets")}>
+            <img
+              className="padded-img"
+              src={`${process.env.PUBLIC_URL}/images/ticket-perforated.svg`}
+              height="20"
+              alt="Fake Company Logo"
+            />
+            View All Tickets          
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
             id="schedule-link"
             className="nav-link link-body-emphasis"
             onClick={() => navigate("/adminschedule")}>
@@ -81,7 +96,7 @@ export default function AdminSideBar({activeLinkId}) {
               height="20"
               alt="Fake Company Logo"
             />
-            View Schedules
+            View All Schedules
           </a>
         </li>
         <li>

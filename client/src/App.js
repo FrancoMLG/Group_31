@@ -20,6 +20,7 @@ import UserTicket from "./components/tickets/userticket";
 import About from "./components/Auth/about";
 import Calendar from "./components/calendar/Calendar";
 import TicketDetail from "./components/tickets/ticketDetails";
+import AdminTickets from "./components/dashboards/admin/admin_tickets";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <Route path="/admingrant" element={<AdminGrant />} />
         <Route path="/userticket" element={<UserTicket />} />
         <Route path="/calendar" element={<Calendar />} />
+        <Route path="/admintickets" element={<AdminTickets />} /> 
       </Routes>
     </BrowserRouter>
   );
