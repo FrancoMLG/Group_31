@@ -18,7 +18,6 @@ export default function UserSchedule() {
         </div>
         <div className="col overflow-auto">
           <DashHeader headerText={"Schedule Appointment"} />
-          <br />
           <MaintenanceRequestForm />
         </div>
       </div>

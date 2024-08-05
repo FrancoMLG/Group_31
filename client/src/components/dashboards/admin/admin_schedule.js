@@ -57,6 +57,7 @@ export default function AdminSchedule() {
                 </option>
               ))}
             </select>
+            <br />
             {selectedTechnician && (
               <h5>
                 {`${getTechnicianById(selectedTechnician).firstName} ${

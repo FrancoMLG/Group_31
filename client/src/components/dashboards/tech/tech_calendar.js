@@ -17,8 +17,6 @@ export default function TechCalendar() {
 				<div className="col overflow-auto">
 					<br />
 					<Calendar />
-
-					<p>Insert More Content Here!</p>
 				</div>
 			</div>
 		</div>

@@ -81,9 +81,7 @@ export default function AdminGrant() {
         </div>
         <div className="col overflow-auto">
           <DashHeader headerText={"Grant Privileges"} />
-          <br />
           <div className="container">
-            <h1>Grant Privileges</h1>
             <div className="mb-3">
               <input
                 type="text"

@@ -17,8 +17,6 @@ export default function TechMessages() {
         <div className="col overflow-auto">
           <DashHeader headerText={"Ticket Messages"} />
 
-          <p>Insert More Content Here!</p>
-
         </div>
       </div>
     </div>

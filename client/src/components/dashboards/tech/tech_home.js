@@ -102,7 +102,6 @@ export default function TechHome() {
         <div className="col overflow-auto" style={{paddingRight: "5%"}}>
           <DashHeader headerText={"Home"} />
           <div className="TechIntro">
-            <br />
             <p>
               Welcome to your Technician dashboard! Below are the tickets that
               you have been assigned. Please enter the time that you estimate

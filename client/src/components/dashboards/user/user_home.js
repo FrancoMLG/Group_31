@@ -18,11 +18,10 @@ export default function UserHome() {
 				<div className="col overflow-auto">
 					<DashHeader headerText={"Home"} />
 
-					<br />
-          <p>
-							Welcome to your User dashboard! Use the sidebar to navigate to the different sections of the
-							dashboard.
-						</p>
+					<p>
+						Welcome to your User dashboard! Use the sidebar to navigate to the
+						different sections of the dashboard.
+					</p>
 				</div>
 			</div>
 		</div>

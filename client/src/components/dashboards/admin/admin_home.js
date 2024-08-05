@@ -16,7 +16,6 @@ export default function AdminHome() {
 				</div>
 				<div className="col overflow-auto">
 					<DashHeader headerText={"Home"} />
-					<br />
 					<p>
 						Welcome to your Admin dashboard! Use the sidebar to navigate to the
 						different sections of the dashboard.

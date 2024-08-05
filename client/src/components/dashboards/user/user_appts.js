@@ -42,7 +42,6 @@ export default function UserAppointments() {
         </div>
         <div className="col overflow-auto" style={{paddingRight: "5%"}}>
           <DashHeader headerText={"Appointments"} />
-          <br />
           {tickets.length > 0 ? (
             <table className="table table-striped table-hover">
               <thead>
