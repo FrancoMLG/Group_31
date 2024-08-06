@@ -31,10 +31,12 @@ export default function AdminTickets() {
             });
     }, []);
 
+    // get selected technician by id from dropdown
     const handleTechnicianChange = (event) => {
         setSelectedTechnician(event.target.value);
     };
 
+    // when ticket is not assigned, allow assign 
     const handleTicketAssignment = async (ticketId, technicianId) => {
         try {
             const technicianTickets = tickets.filter(ticket => ticket.technician === technicianId);
@@ -46,6 +48,7 @@ export default function AdminTickets() {
             const startTime = getNextAvailableTime(lastTicketEndTime, 30);
             const endTime = new Date(startTime.getTime() + 30 * 60000); // 30 minutes later
 
+            // update database
             await updateTicket(ticketId, {
                 technician: technicianId,
                 status: technicianId ? "Assigned" : "Open",
@@ -53,7 +56,6 @@ export default function AdminTickets() {
                 endTime: endTime.toISOString(),
             });
 
-            // Fetch updated tickets
             const updatedTickets = await fetchTickets();
             setTickets(updatedTickets.data);
         } catch (error) {
@@ -61,6 +63,7 @@ export default function AdminTickets() {
         }
     };
 
+    // when unassigned button is clicked, unassign ticket, update database
     const unassignTicket = async (ticketId) => {
         try {
             await updateTicket(ticketId, {
@@ -76,6 +79,7 @@ export default function AdminTickets() {
         }
     };
 
+    // show ticket by tech
     const filteredTickets =
         selectedTechnician === "all"
             ? tickets

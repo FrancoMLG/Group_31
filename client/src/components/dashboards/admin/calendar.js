@@ -1,3 +1,4 @@
+// from https://github.com/fullcalendar/fullcalendar-react
 import React, { useState, useEffect } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -12,6 +13,8 @@ export default function Calendar({ technicianId }) {
   useEffect(() => {
     const fetchTickets = async () => {
       try {
+
+        // get tickets by technician id
         if (!technicianId) return;
         const data = await fetchTicketsByTechnician(technicianId);
         const events = data.data.map(ticket => ({
@@ -29,6 +32,8 @@ export default function Calendar({ technicianId }) {
     fetchTickets();
   }, [technicianId]);
 
+
+  // allow admin to update ticket with resizing the box
   const handleEventResize = async (resizeInfo) => {
     const { event } = resizeInfo;
     try {
@@ -42,6 +47,7 @@ export default function Calendar({ technicianId }) {
     }
   };
 
+  // allow admin to change time of ticket with drag and drop
   const handleEventDrop = async (dropInfo) => {
     const { event } = dropInfo;
     try {
@@ -55,6 +61,7 @@ export default function Calendar({ technicianId }) {
     }
   };
 
+  // not allowed, from
   function handleDateSelect(selectInfo) {
     let title = prompt('title for event');
     let calendarApi = selectInfo.view.calendar;

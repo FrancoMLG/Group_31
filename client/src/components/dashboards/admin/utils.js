@@ -7,7 +7,7 @@ export const formatDate = (dateString) => {
     return `${month}/${day} ${hours}:${minutes}`;
 };
 
-
+// for 9-5 weekday schedule
 export const getNextAvailableTime = (currentTime, duration) => {
     let nextTime = new Date(currentTime.getTime() + 300000); // 5 minutes later
 

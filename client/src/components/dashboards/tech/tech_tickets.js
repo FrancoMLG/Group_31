@@ -31,8 +31,9 @@ export default function TechTickets() {
     return `${month}/${day}/${year}`;
   };
 
+  // assign ticket to tech and remove from active tickets page
   const assignTicket = async (ticketId, event) => {
-    event.stopPropagation();
+    event.stopPropagation();s
     try {
       const user = JSON.parse(localStorage.getItem("profile"));
       await updateTicket(ticketId, {

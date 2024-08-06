@@ -1,3 +1,5 @@
+// from https://github.com/fullcalendar/fullcalendar-react
+
 import React, { useState, useEffect } from 'react'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
@@ -58,9 +60,9 @@ export default function Calendar() {
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       }}
       events={assignedTasks}
-      editable={false} // Disable editing
-      eventClick={() => {}} // Disable event clicking
-      selectable={true}
+      editable={false}                    // cannot edit events
+      eventClick={() => {}}               // cannot click on events
+      selectable={false}                  // cannot select dates
       select={handleDateSelect}
     />
   );

@@ -6,6 +6,8 @@ import {createTicket} from "../../api";
 const MaintenanceRequestForm = () => {
   const navigate = useNavigate();
 
+
+  // 4 things assicated with the ticket from the form
   const [formData, setFormData] = useState({
     description: "",
     creator: "",
@@ -15,6 +17,7 @@ const MaintenanceRequestForm = () => {
 
   const [formErrors, setFormErrors] = useState({});
 
+  // make sure that all fields are filled out
   const validate = () => {
     let formIsValid = true;
     let errors = {};

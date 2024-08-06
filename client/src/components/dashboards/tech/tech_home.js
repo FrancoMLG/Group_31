@@ -28,10 +28,13 @@ export default function TechHome() {
     fetchData();
   }, []);
 
+  // unassign ticket with button click and remove from home page
   const unassignTicket = async (ticketId, event) => {
     event.stopPropagation();
     try {
       const user = JSON.parse(localStorage.getItem("profile"));
+
+      // update database
       await updateTicket(ticketId, {
         status: "Open",
         startTime: null,
@@ -45,9 +48,12 @@ export default function TechHome() {
     }
   };
 
+  // allow technician to select time for ticket
   const handleTimeSelect = async (ticketId, startTime, endTime, event) => {
     event.stopPropagation();
     try {
+      
+      // update database
       await updateTicket(ticketId, {
         startTime,
         endTime,
@@ -64,6 +70,8 @@ export default function TechHome() {
     event.stopPropagation();
     const duration = parseInt(value, 10);
 
+
+    // get next available time for ticket and update time when time is selected
     try {
       const user = JSON.parse(localStorage.getItem("profile"));
       const data = await fetchTicketsByTechnician(user.result._id);

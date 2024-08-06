@@ -25,10 +25,13 @@ export default function AdminSchedule() {
       });
   }, []);
 
+
+  // get selected technician by id from dropdown
   const handleTechnicianChange = (event) => {
     setSelectedTechnician(event.target.value);
   };
 
+  // get selected technician by id from dropdown
   const getTechnicianById = (id) => {
     return technicians.find((tech) => tech._id === id);
   };
