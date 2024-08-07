@@ -1,3 +1,4 @@
+/*Styling for chat input form*/
 .chat-input {
   padding: 0.625em;
   border: none;
@@ -9,6 +10,7 @@
   height: 50px;
 }
 
+/*Styling for send button*/
 .send-button {
   background-color: #f0f0f0;
   color: #333;
@@ -16,6 +18,7 @@
   font-weight: bold;
 }
 
+/*Styling for message from user*/
 .userMessage {
   background-color: #f0f0f0;
   color: #333;
@@ -26,6 +29,7 @@
   margin: 0.5em 0;
 }
 
+/*Styling for message from technician*/
 .techMessage {
   background-color: #007bff;
   color: #333;
@@ -36,6 +40,7 @@
   margin: 0.5em 0;
 }
 
+/*Styling for messages in general*/
 .messages-container {
   display: flex;
   flex-direction: column;

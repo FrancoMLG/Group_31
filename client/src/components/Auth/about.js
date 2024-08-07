@@ -7,12 +7,16 @@ import {useNavigate, Link} from "react-router-dom";
 import Navbar from "../navbar";
 
 const About = () => {
+	//Navigate for routing
   const navigate = useNavigate();
   return (
+  //Overall container for page
     <div className="container-fluid bg-body-tertiary">
       <nav
         className="navbar navbar-expand-lg fixed-top bg-body-secondary"
         style={{paddingTop: "0"}}>
+		
+		{/*Container and creation of navbar at the top of the page*/}
         <div className="container-fluid">
           <Link className="navbar-brand mx-2" to="/">
             <img
@@ -23,6 +27,8 @@ const About = () => {
             />
             Fake Company Name
           </Link>
+		  
+		  {/*Button to return to the homepage*/}
           <button
             className="navbar-toggler"
             type="button"
@@ -36,6 +42,7 @@ const About = () => {
         </div>
       </nav>
 
+	  {/*Container for immage in screen*/}
       <div className="container col-xxl-8 px-2 py-5">
         <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
           <div className="col-10 col-sm-8 col-lg-6">
@@ -52,6 +59,8 @@ const About = () => {
             <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3">
               About Us
             </h1>
+			
+			{/*Headers and paragraphs describing the website and what we do.*/}
             <p className="lead">
               Welcome to Fake Company Name, your reliable partner in solving IT
               challenges swiftly and efficiently. Established with a commitment
@@ -170,6 +179,7 @@ const About = () => {
         </div>
       </div>
 	  
+	  {/*Container for footer*/} 
 	  <div className="container">
         <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
           <div className="col-md-4 d-flex align-items-center">

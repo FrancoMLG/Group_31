@@ -5,6 +5,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import {useNavigate, Link} from "react-router-dom";
 import {signIn} from "../../api";
 
+	{/*Form for signing in*/}
 const SigninForm = () => {
   const navigate = useNavigate();
 
@@ -21,6 +22,7 @@ const SigninForm = () => {
     });
   };
 
+  {/*User authentication*/}
   const validate = () => {
     const errors = {};
     if (!formData.email) errors.email = "Email is required";
@@ -28,6 +30,7 @@ const SigninForm = () => {
     return errors;
   };
 
+  {/*Submission of form*/}
   const handleSubmit = async (e) => {
     e.preventDefault();
     const errors = validate();
@@ -43,6 +46,7 @@ const SigninForm = () => {
     }
   };
 
+  {/*Sign in visuals*/}
   return (
     <div className="container-fluid bg-body-tertiary">
       <nav className="navbar navbar-expand-lg fixed-top bg-body-secondary" style={{paddingTop: "0"}}>
